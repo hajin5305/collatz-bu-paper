@@ -8,6 +8,10 @@
 
 이 저장소는 논문 초안과 보조 계산을 재현하는 자료를 함께 보관합니다. 원고는 저자의 최종 검토 전 초안이며, 전체 정리의 문헌상 최초성은 확정하지 않았습니다. 일반 콜라츠 추측의 해결을 주장하지 않습니다.
 
+## 영문 투고용 원고
+
+[english/collatz_bu_en.pdf](english/collatz_bu_en.pdf) · [english/collatz_bu_en.tex](english/collatz_bu_en.tex) · [변경 사항과 투고 전 확인 항목](english/README.md). 아래 한국어 초안 v0.1은 그대로 보존합니다.
+
 ## 문서
 
 | 파일 | 내용 |
