@@ -1,9 +1,8 @@
-# Collatz BU paper and reproducibility materials
+# Irrationality of Collatz Parity Inverses for Block Codings of Binary Uniform Fixed Points
 
 **Author: Lee HaJin**  
 **Current manuscript: English revision v0.2 - October 6, 2026**
 
-*Irrationality of Collatz parity inverses for block codings of binary uniform fixed points*
 
 This repository contains an English research manuscript and exact finite verification materials. The manuscript is a draft pending the author's final review. Priority for the full theorem has not been established; the paper acknowledges earlier Thue-Morse results and Padé/Mahler methods.
 
