@@ -17,6 +17,8 @@ This repository contains an English research manuscript and exact finite verific
 | [Source archive](english/collatz_bu_en_sources.zip) | English manuscript, documentation and supplementary files |
 | [Revision notes](english/README.md) | Corrections and build instructions |
 | [Reproduction guide](supplement/README.md) | Scope, commands and source provenance |
+| [Publication notes](PUBLICATION_NOTES.md) | Why this result was chosen, related work and remaining tasks |
+| [Literature review](supplement/literature_review.txt) | Literature triage used when preparing the manuscript |
 
 The theorem classifies when the 2-adic Collatz parity inverse of a binary block coding of a binary uniform substitution fixed point is rational: precisely when the control word is ultimately periodic or the two output blocks commute. It does not assert a solution of the general Collatz conjecture.
 
@@ -37,9 +39,9 @@ The supplementary checker uses Python's standard library. Generating certificate
 
 The supplementary research files are pinned to `hajin5305/collatz-research` commit `f751b9102355c516434ed9d0882bf4eb8608d95b`. The theorem identifier is `RED-BINARY-UNIFORM-PADE-IRRATIONALITY`; the source record is `docs/research_records/2026-10-02/binary_uniform_pade/THEORY_KO.md`. The [source manifest](supplement/SOURCE_MANIFEST.json) records the original paths and hashes.
 
-The Korean v0.1 PDF, Word, LaTeX and source archive at the repository root are preserved as historical drafts. Root `SHA256SUMS` covers those original materials; `english/SHA256SUMS` covers the revised English package. Korean audit notes remain historical source records, with an English guide provided for reproduction.
+The Korean v0.1 PDF, Word, LaTeX and source archive at the repository root are preserved as historical drafts. The original Korean explanatory notes are kept unchanged in [korean/](korean/), each with an English counterpart listed in [korean/README.md](korean/README.md). Root `SHA256SUMS` covers every file outside `english/`; `english/SHA256SUMS` covers the revised English package.
 
-This repository is private. [Zenodo record 23186729](https://zenodo.org/records/23186729) is the earlier Korean draft deposit; it should not be cited as a public deposit of this English revision or its supplementary package.
+[Zenodo record 23186729](https://zenodo.org/records/23186729) is the earlier Korean draft deposit; it should not be cited as a public deposit of this English revision or its supplementary package.
 
 ## Generative AI disclosure
 

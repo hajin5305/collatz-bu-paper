@@ -18,8 +18,10 @@ This package reproduces finite block identities and six explicit Padé certifica
 | `SOURCE_MANIFEST.json` | Original source paths and SHA-256 hashes |
 | `validation_summary.json` | Recorded execution scope, counts and comparisons |
 | `requirements.txt` | SymPy 1.14.0 requirement |
+| `literature_review.txt` | Literature triage and scope of related work |
+| `literature_search_log.json` | Record of the literature searches |
 
-The Korean `README.txt` and literature audit notes are preserved historical records. This file is the English entry point.
+The original Korean version of this guide is preserved as [`korean/supplement_README_ko.txt`](../korean/supplement_README_ko.txt). This file is the English entry point.
 
 ## Run in a temporary copy
 
