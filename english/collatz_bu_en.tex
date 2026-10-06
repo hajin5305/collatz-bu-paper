@@ -1,0 +1,348 @@
+\documentclass[11pt]{amsart}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\theoremstyle{definition}
+\newtheorem{example}[theorem]{Example}
+
+\numberwithin{equation}{section}
+
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Ht}{\operatorname{H}}
+\newcommand{\vt}{v_2}
+
+\title[Collatz parity inverses of block-coded uniform fixed points]{Irrationality of Collatz parity inverses for block codings of binary uniform fixed points}
+\author{Lee HaJin}
+% Affiliation, e-mail and ORCID are to be supplied by the author before submission.
+
+\subjclass[2020]{Primary 11J72; Secondary 11B85, 11B83, 68R15}
+\keywords{Collatz map, $3x+1$ conjugacy map, $2$-adic integers, uniform substitutions, automatic sequences, Mahler functional equations, Pad\'e approximation, irrationality}
+
+\begin{document}
+
+\begin{abstract}
+Let $\Phi$ be the inverse of the Collatz ($3x+1$) parity map, which sends an infinite binary word to the unique $2$-adic integer whose shortcut Collatz orbit has that parity sequence. Let $t=\sigma(t)$ be a one-sided fixed point of a binary $q$-uniform substitution $\sigma$, $q\ge 2$, and let $\kappa$ be the block coding $0\mapsto U$, $1\mapsto V$ with nonempty binary words $U,V$. We prove that $\Phi(\kappa(t))$ is rational if and only if $t$ is ultimately periodic or $UV=VU$. No primitivity of $\sigma$ and no equality of the lengths or of the numbers of ones of $U$ and $V$ is assumed. In particular, no rational $2$-adic integer, and hence no positive integer, has such a parity sequence in the aperiodic noncommuting case. The proof expresses $\Phi(\kappa(t))$ at every substitution level through one fixed bivariate power series evaluated along the orbit of a monomial map, controls the height of the second coordinate by the subdominant eigenvalue of the substitution, and concludes with a fixed Pad\'e-type approximant, a separate nonvanishing argument for the actual evaluations, and the inequality $2^{13}>3^{8}$.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}\label{sec:intro}
+
+Recording the parity of each iterate of the shortcut Collatz map turns questions about integer orbits into questions about the arithmetic realizability of infinite binary words. Every infinite binary word is the parity sequence of exactly one $2$-adic integer, and the map $\Phi$ from words to $2$-adic integers is the inverse of the $3x+1$ conjugacy map studied by Bernstein and Lagarias~\cite{BL1996}. Whether $\Phi(w)$ is rational, or a positive integer, is an additional and delicate arithmetic condition.
+
+This paper treats parity words obtained from fixed points of binary uniform substitutions by a two-block coding. Our main result is an exact classification of the rational cases.
+
+\begin{theorem}\label{thm:main}
+Let $q\ge2$, let $\sigma$ be a $q$-uniform substitution on $\{0,1\}$ with a one-sided fixed point $t=\sigma(t)$, and let $U,V$ be nonempty finite binary words. Define the coding $\kappa(0)=U$, $\kappa(1)=V$. Then
+\[
+\Phi(\kappa(t))\in\Q \iff t \text{ is ultimately periodic or } UV=VU .
+\]
+Primitivity of $\sigma$, $|U|=|V|$, and equality of the numbers of ones in $U$ and $V$ are not assumed.
+\end{theorem}
+
+\begin{corollary}\label{cor:integer}
+If $t$ is not ultimately periodic and $UV\ne VU$, then no $x\in\Q\cap\Z_2$ has parity sequence $\kappa(t)$; in particular no positive integer does. The same holds after deleting or prepending any finite parity prefix.
+\end{corollary}
+
+The theorem concerns a binary control alphabet and uniform substitutions only. It does not assert transcendence throughout the family, it does not exclude arbitrary automatic parity sequences, and it says nothing about the Collatz conjecture itself: there is no reason for an integer orbit to have a parity sequence of the form considered here.
+
+\subsection{Relation to Mahler's method and to previous work}\label{subsec:prior}
+
+The series used in the proof satisfies a linear Mahler-type functional equation in two variables (Proposition~\ref{prop:mahler}), and the evaluation points form an orbit of the associated monomial map. The natural general tool is therefore Mahler's method in several variables, as developed by Loxton and van der Poorten~\cite{LvdP1982}. Their main theorem \cite[Theorem~1]{LvdP1982}, an equality of transcendence degrees at admissible algebraic points, is stated for complex evaluation points and for transformation matrices that are \emph{regular}: nonnegative integer entries, nonsingular, a positive eigenvector for the spectral radius, and no eigenvalue that is a root of unity~\cite[\S2]{LvdP1982}. In our setting the transformation matrix is $\begin{psmallmatrix} q & a_0\\ 0 & \delta\end{psmallmatrix}$ with $\delta=a_1-a_0$, where $a_b$ is the number of ones in $\sigma(b)$. Here $\delta$ can be zero (for example for the Thue--Morse substitution), $\pm1$, or negative, and the relevant place is $2$-adic. We do not claim that no version of the multivariable theory covers the whole family; we only note that the classical regularity hypotheses fail for some of its members, and we give a self-contained proof that treats all $\delta$ uniformly. Results on algebraic independence for multivariable functions generated by linear recurrences, such as Ide~\cite{Ide2019}, carry their own admissibility and nonvanishing hypotheses, which we have not verified for the full family considered here.
+
+Pad\'e approximation and height comparison for $p$-adic values of Mahler-type series are classical; see for instance Bugeaud and Yao~\cite{BY2017}, who treat Thue--Morse related $p$-adic numbers. Theorems on the complexity of $p$-adic \emph{digit} expansions, such as Adamczewski and Bugeaud~\cite{AB2007}, do not apply directly: the parity bits of the orbit are not the $2$-adic digits of $\Phi(w)$, and the series~\eqref{eq:Phi} below carries denominators $3^{S_{j+1}}$ that depend on the running number of ones.
+
+Two recent unrefereed manuscripts treat special cases. Allikvere~\cite{Allikvere2026} proves transcendence, a stronger conclusion than ours, for Thue--Morse controlled codings by two distinct blocks of equal length; after regrouping $UV$ and $VU$ this overlaps with the Thue--Morse case of Theorem~\ref{thm:main} under the equal-length assumption. Sharpe~\cite{Sharpe2026} excludes the parity sequence of the specific uniform substitution $1\mapsto110$, $0\mapsto011$ and its shifts. The contribution of the present paper is the exact rationality classification for the \emph{whole} class of binary uniform fixed points and two-block codings, including nonprimitive substitutions and blocks of different lengths and different numbers of ones, with a proof that does not invoke a transcendence theorem as a black box. We have not established that this classification is new in the literature beyond the sources discussed here.
+
+\section{Notation}\label{sec:notation}
+
+Let $\N_0=\{0,1,2,\dots\}$. We write $\Z_2,\Q_2$ for the $2$-adic integers and numbers, normalize $\vt(2)=1$, $\vt(0)=+\infty$, and regard $\Q\subset\Q_2$. The shortcut Collatz map on $\Z_2$ is
+\[
+T(x)=\begin{cases} x/2, & x\equiv0\pmod2,\\ (3x+1)/2, & x\equiv1\pmod2,\end{cases}
+\]
+and the parity sequence of $x$ is $\pi(x)_j\equiv T^j(x)\pmod 2$. For an infinite binary word $w=w_0w_1\cdots$ put $S_j=\sum_{i<j}w_i$ and
+\begin{equation}\label{eq:Phi}
+\Phi(w)=-\sum_{j\ge0}\frac{w_j\,2^j}{3^{S_{j+1}}}\in\Z_2 .
+\end{equation}
+The $j$-th term has valuation at least $j$, so the series converges. Directly from the first letter, $\Phi(0v)=2\Phi(v)$ and $\Phi(1v)=(2\Phi(v)-1)/3$; the first is even and the second odd, and therefore $\pi(\Phi(w))=w$. This is the inverse of the conjugacy map of~\cite{BL1996}.
+
+For a finite word $u$ we write $N(u)$ for its length and $A(u)$ for its number of ones; $\{0,1\}^+$ is the set of nonempty finite binary words. A word $t$ is \emph{ultimately periodic} if $t=prrr\cdots$ for finite words $p,r$ with $r$ nonempty. A substitution $\sigma$ is $q$-uniform if $N(\sigma(0))=N(\sigma(1))=q$. The height of a rational number $a/b$ in lowest terms with $b>0$ is $\Ht(a/b)=\max\{|a|,b\}$. All $O(\cdot)$ and $o(\cdot)$ refer to $k\to\infty$ with $\sigma,t,U,V$ fixed.
+
+\section{Affine structure of finite blocks}\label{sec:affine}
+
+For a finite binary word $u=u_0\cdots u_{N-1}$ define
+\begin{equation}\label{eq:B}
+B_0=0,\qquad B_{j+1}=3^{u_j}B_j+u_j2^j,\qquad B(u)=B_N,
+\end{equation}
+and
+\begin{equation}\label{eq:clambda}
+c(u)=-\frac{B(u)}{3^{A(u)}},\qquad \lambda(u)=\frac{2^{N(u)}}{3^{A(u)}} .
+\end{equation}
+
+\begin{lemma}\label{lem:affine}
+For finite words $u,v$ and an infinite word $w$,
+\begin{align}
+\Phi(uw)&=c(u)+\lambda(u)\Phi(w),\label{eq:affine}\\
+c(uv)&=c(u)+\lambda(u)c(v),\label{eq:concat}\\
+0&\le B(u)\le 3^{N(u)}-2^{N(u)} .\label{eq:Bbound}
+\end{align}
+If $u\ne v$ have the same length and first differ at position $r$, then $\vt(c(u)-c(v))=r$.
+\end{lemma}
+
+\begin{proof}
+By induction, $B_j=\sum_{i<j}u_i2^i3^{S_j-S_{i+1}}$, so $c(u)=-\sum_{i<N}u_i2^i/3^{S_{i+1}}$; splitting~\eqref{eq:Phi} into the first $N$ terms and the tail gives~\eqref{eq:affine}, and applying it with $w=v0^\infty$ gives~\eqref{eq:concat}. Changing a letter from $0$ to $1$ does not decrease $B$, and the all-ones word gives $B=3^N-2^N$, proving~\eqref{eq:Bbound}. For the last claim, remove the common prefix $p$ of length $r$: by~\eqref{eq:concat}, $c(u)-c(v)=\lambda(p)\,(c(u')-c(v'))$ with $\vt(\lambda(p))=r$. Since $B$ is odd for words beginning with $1$ and even for words beginning with $0$, exactly one of $c(u'),c(v')$ is a $2$-adic unit, so $\vt(c(u')-c(v'))=0$.
+\end{proof}
+
+\begin{lemma}\label{lem:code}
+For $U,V\in\{0,1\}^+$, the morphism $0\mapsto U$, $1\mapsto V$ is injective on finite words if and only if $UV\ne VU$.
+\end{lemma}
+
+\begin{proof}
+This is the classical fact that a two-element set $\{U,V\}$ is a code exactly when $U$ and $V$ do not commute; for the background on commuting words see~\cite[Chapter~1]{Lothaire}. We include the short argument: if $UV=VU$ the words $01$ and $10$ have the same image. Conversely, from a nontrivial relation between two distinct inputs remove a common first letter, so that one image starts with $U$ and the other with $V$; then one of $U,V$ is a prefix of the other. If $U=V$ they commute. Otherwise, say $V=UW$ with $W$ nonempty; the morphism $0\mapsto0$, $1\mapsto01$ is injective (decode from the right), so the relation induces a nontrivial relation for $\{U,W\}$, and induction on $N(U)+N(V)$ gives $UW=WU$, hence $UV=VU$.
+\end{proof}
+
+From now on, for the difficult direction of Theorem~\ref{thm:main}, assume that $t$ is not ultimately periodic and $UV\ne VU$. Then $\sigma(0)\ne\sigma(1)$ (otherwise $t$ would be periodic), so $\{\sigma(0),\sigma(1)\}$ is a uniform code and $\sigma^k$ is injective. Put
+\[
+W_{b,k}=\kappa(\sigma^k(b))\qquad(b\in\{0,1\},\ k\ge0),
+\]
+and write $c_{b,k}=c(W_{b,k})$, $\lambda_{b,k}=\lambda(W_{b,k})$, and $N_{b,k},A_{b,k},B_{b,k}$ similarly. By Lemma~\ref{lem:code} applied to the injective morphism $\kappa\circ\sigma^k$, $W_{0,k}W_{1,k}\ne W_{1,k}W_{0,k}$; these two words have the same length, so by~\eqref{eq:concat} and Lemma~\ref{lem:affine},
+\begin{equation}\label{eq:D}
+D_k:=c_{1,k}(1-\lambda_{0,k})-c_{0,k}(1-\lambda_{1,k})=c(W_{1,k}W_{0,k})-c(W_{0,k}W_{1,k})\ne0 .
+\end{equation}
+
+\section{Two scales and a fixed bivariate series}\label{sec:series}
+
+Let $a_b=A(\sigma(b))$ and $\delta=a_1-a_0$. If $\delta=q$ then $\sigma(0)=0^q$, $\sigma(1)=1^q$ and every fixed point is constant; if $\delta=-q$ the first letter is exchanged and there is no fixed point. Hence, under our assumptions,
+\begin{equation}\label{eq:delta}
+|\delta|<q .
+\end{equation}
+
+\begin{lemma}\label{lem:counts}
+Let $n_0=N(U)$, $n_1=N(V)$, $\rho=a_0/(q-\delta)\in[0,1]$ and $L=(1-\rho)n_0+\rho n_1>0$. For $k\ge0$,
+\begin{align*}
+N_{0,k}&=Lq^k-\rho(n_1-n_0)\delta^k, &
+N_{1,k}&=Lq^k+(1-\rho)(n_1-n_0)\delta^k, \\
+A_{1,k}-A_{0,k}&=(A(V)-A(U))\,\delta^k . &&
+\end{align*}
+In particular $N_{b,k}=Lq^k+o(q^k)$ for $b=0,1$.
+\end{lemma}
+
+\begin{proof}
+Let $f_k=A(\sigma^k(0))$ and $g_k=A(\sigma^k(1))$. Counting the ones produced by the zeros and ones of $\sigma^k(b)$ gives $f_{k+1}=a_0q^k+\delta f_k$ and the same recursion for $g_k$, with $f_0=0$, $g_0=1$. Hence $f_k=\rho(q^k-\delta^k)$ and $g_k=f_k+\delta^k$. Replacing zeros by $U$ and ones by $V$ gives $N_{b,k}=n_0q^k+(n_1-n_0)A(\sigma^k(b))$ and $A_{b,k}=A(U)q^k+(A(V)-A(U))A(\sigma^k(b))$, which are the stated formulas. Finally $0\le a_0\le q-a_1+a_0$ gives $0\le\rho\le1$, so $L>0$, and~\eqref{eq:delta} gives $\delta^k=o(q^k)$.
+\end{proof}
+
+Define the evaluation points
+\begin{equation}\label{eq:zy}
+z_k=\lambda_{0,k},\qquad y_k=\frac{\lambda_{1,k}}{\lambda_{0,k}}=\Bigl(\frac{2^{n_1-n_0}}{3^{A(V)-A(U)}}\Bigr)^{\delta^k}.
+\end{equation}
+These are positive rationals; $y_k$ need not be a $2$-adic unit. By Lemma~\ref{lem:counts},
+\begin{equation}\label{eq:smallheight}
+\Ht(z_k)\le3^{N_{0,k}},\qquad \log\Ht(y_k)=O(|\delta|^k)=o(q^k),\qquad |\vt(y_k)|=o(q^k).
+\end{equation}
+
+Let $s_n=\sum_{j<n}t_j$ and define
+\begin{equation}\label{eq:FG}
+F(z,y)=\sum_{n\ge0}t_n\,z^ny^{s_n},\qquad G(z,y)=\sum_{n\ge0}z^ny^{s_n}
+\end{equation}
+in $\Z[y][[z]]$. Comparing coefficients,
+\begin{equation}\label{eq:FGid}
+(1-z)\,G(z,y)=1+z(y-1)\,F(z,y).
+\end{equation}
+At $(z_k,y_k)$ the $n$-th term has valuation $nN_{0,k}+s_n(N_{1,k}-N_{0,k})\ge n\min(N_{0,k},N_{1,k})$, so both series converge in $\Q_2$.
+
+Since $t=\sigma^k(t)$, the word $w=\kappa(t)$ is, for every $k$, the concatenation of the blocks $W_{t_0,k}W_{t_1,k}W_{t_2,k}\cdots$. The slope of the prefix $W_{t_0,k}\cdots W_{t_{n-1},k}$ is $\lambda_{0,k}^{\,n-s_n}\lambda_{1,k}^{\,s_n}=z_k^ny_k^{s_n}$, so Lemma~\ref{lem:affine} gives
+\[\xi:=\Phi(w)=c_{0,k}G(z_k,y_k)+(c_{1,k}-c_{0,k})F(z_k,y_k).\]
+ Eliminating $G$ with~\eqref{eq:FGid} and using $z_ky_k=\lambda_{1,k}$,
+\begin{equation}\label{eq:seedF}
+\xi=\frac{c_{0,k}+D_k\,F(z_k,y_k)}{1-z_k}\qquad\text{for every }k\ge0 .
+\end{equation}
+Here $1-z_k\ne0$ because $2^{N_{0,k}}\ne3^{A_{0,k}}$. The left-hand side does not depend on $k$.
+
+\begin{proposition}\label{prop:mahler}
+Let $\tau(z,y)=(z^qy^{a_0},y^{\delta})$, and for $b\in\{0,1\}$ let
+\[
+R_b(z,y)=\sum_{i<q}\sigma(b)_i\,z^iy^{A(\sigma(b)_0\cdots\sigma(b)_{i-1})},\qquad R'_b(z,y)=\sum_{i<q}z^iy^{A(\sigma(b)_0\cdots\sigma(b)_{i-1})}.
+\]
+Then, as formal series (Laurent in $y$ when $\delta<0$),
+\[
+F=R_0\,(G\circ\tau)+(R_1-R_0)\,(F\circ\tau),\qquad G=R'_0\,(G\circ\tau)+(R'_1-R'_0)\,(F\circ\tau),
+\]
+and the evaluation points satisfy $(z_{k+1},y_{k+1})=\tau(z_k,y_k)$.
+\end{proposition}
+
+\begin{proof}
+Write $n=qm+i$ with $0\le i<q$. Then $t_n=\sigma(t_m)_i$ and
+\[s_n=s_{qm}+A(\sigma(t_m)_0\cdots\sigma(t_m)_{i-1}),\qquad s_{qm}=a_0(m-s_m)+a_1s_m=a_0m+\delta s_m.\]
+ Summing over $i$ for fixed $m$ gives the factor $(z^qy^{a_0})^m(y^\delta)^{s_m}R_{t_m}(z,y)$, and $R_{t_m}=R_0+t_m(R_1-R_0)$; the same computation without the weight $t_n$ gives the equation for $G$. For the evaluation points, $\lambda$ is multiplicative under concatenation and $\kappa\sigma^{k+1}(b)=\kappa\sigma^k(\sigma(b))$, so $\lambda_{0,k+1}=\lambda_{0,k}^{\,q-a_0}\lambda_{1,k}^{\,a_0}=z_k^qy_k^{a_0}$ and $y_{k+1}=(\lambda_{1,k}/\lambda_{0,k})^{a_1-a_0}=y_k^\delta$.
+\end{proof}
+
+Thus $(F,G)$ is a linear Mahler system for the monomial map with matrix $\begin{psmallmatrix} q&a_0\\0&\delta\end{psmallmatrix}$, and the points $(z_k,y_k)$ form one $\tau$-orbit. When $\delta\in\{0,\pm1\}$ this matrix has an eigenvalue that is $0$ or a root of unity, and when $\delta<0$ it has a negative entry; such cases are outside the regularity hypotheses of~\cite{LvdP1982}. The argument below does not use Proposition~\ref{prop:mahler}; it uses only~\eqref{eq:seedF} and the growth rates of Lemma~\ref{lem:counts}.
+
+\section{Rational specializations and a fixed Pad\'e-type approximant}\label{sec:pade}
+
+\begin{lemma}\label{lem:NS}
+If $t$ is not ultimately periodic and $\eta\in\Q\setminus\{0\}$, then $F(z,\eta)\notin\Q(z)$.
+\end{lemma}
+
+\begin{proof}
+If $\eta=1$ and $F(z,1)=\sum t_nz^n$ is rational, its coefficients eventually satisfy a fixed linear recurrence; since they lie in $\{0,1\}$, finitely many consecutive bits determine the next one, and $t$ is ultimately periodic.
+
+Let $\eta\ne1$. If $F(z,\eta)$ is rational then so is $G(z,\eta)$ by~\eqref{eq:FGid}. Put $g_n=\eta^{s_n}\ne0$. For some $r\ge1$, rationals $c_i$ and all large $n$, $g_{n+r}=\sum_{i<r}c_ig_{n+i}$. Dividing by $g_n$, the right-hand side is determined by the window $t_n\cdots t_{n+r-2}$, which also determines $g_{n+r-1}/g_n$; hence it determines $g_{n+r}/g_{n+r-1}=\eta^{t_{n+r-1}}$, and since $\eta\ne1$ it determines $t_{n+r-1}$. (For $r=1$ the empty window determines the next bit.) A deterministic evolution on finitely many states is ultimately periodic, a contradiction.
+\end{proof}
+
+\begin{lemma}\label{lem:Pade}
+There exist $P,Q\in\Z[y,z]$ and an integer $D\ge0$ with
+\[
+\deg_zP,\ \deg_zQ\le6,\qquad \deg_yP,\ \deg_yQ\le D,\qquad
+E(z,y):=P+QF\in z^{13}\,\Z[y][[z]],
+\]
+such that $E(z,\eta)$ is a nonzero power series for every $\eta\in\Q\setminus\{0\}$. Writing $E=\sum_ne_n(y)z^n$, one has $\deg e_n\le D+n$.
+\end{lemma}
+
+\begin{proof}
+Over $\Q(y)$, polynomials $P,Q$ of $z$-degree at most $6$ have $14$ coefficients, and the vanishing of the coefficients of $z^0,\dots,z^{12}$ in $P+QF$ is $13$ homogeneous linear conditions, so a nonzero solution exists; $Q=0$ would force $P=0$. Clear denominators, divide all $z$-coefficients of $P$ and $Q$ by their greatest common divisor in $\Q[y]$, and rescale to integer coefficients. If $P(z,\eta)$ and $Q(z,\eta)$ both vanished, $y-\eta$ would divide every coefficient, which is impossible. If $Q(z,\eta)=0$ then $E(z,\eta)=P(z,\eta)\ne0$; otherwise $E(z,\eta)\ne0$ by Lemma~\ref{lem:NS}. The degree bound follows from $s_n\le n$.
+\end{proof}
+
+The integer $D$ may be large, but it is fixed independently of $k$. Explicit approximants for particular substitutions (Section~\ref{sec:checks}) are illustrations, not inputs to the proof.
+
+\section{Proof of Theorem~\ref{thm:main}}\label{sec:proof}
+
+\subsection{A height bound under a rationality assumption}
+Assume $\xi=p/r\in\Q$ with $r>0$. By~\eqref{eq:D} and~\eqref{eq:seedF}, $h_k:=F(z_k,y_k)$ is rational, namely
+\[
+h_k=\frac{3^{A_{1,k}}\bigl[(3^{A_{0,k}}-2^{N_{0,k}})p+B_{0,k}r\bigr]}{r\bigl[B_{0,k}(3^{A_{1,k}}-2^{N_{1,k}})-B_{1,k}(3^{A_{0,k}}-2^{N_{0,k}})\bigr]},
+\]
+with nonzero denominator. Using~\eqref{eq:Bbound} and $A_{b,k}\le N_{b,k}$,
+\begin{equation}\label{eq:hheight}
+\Ht(h_k)\le C_\xi\,3^{N_{0,k}+N_{1,k}},\qquad C_\xi=4(|p|+r).
+\end{equation}
+
+\subsection{Nonvanishing of the actual evaluations}
+Fix $E$ as in Lemma~\ref{lem:Pade}. That $E$ is a nonzero series does not by itself imply $E(z_k,y_k)\ne0$; we show this along an infinite sequence of $k$.
+
+\emph{Case 1: $\{y_k\}$ is finite.} This includes $\delta\in\{0,\pm1\}$ and the case where the base in~\eqref{eq:zy} equals $1$. Choose $\eta$ with $y_k=\eta$ for infinitely many $k$. Let $\ell$ be the order of the nonzero series $E(z,\eta)$ and $h=\max(0,-\vt(\eta))$. For $n\ge\ell+1$, $\vt(e_n(\eta)z_k^n)\ge n(N_{0,k}-h)-Dh$, which exceeds $\ell N_{0,k}+\vt(e_\ell(\eta))$ once $N_{0,k}$ is large. Hence $E(z_k,\eta)\ne0$ for all large $k$ in this subsequence.
+
+\emph{Case 2: $|\delta|\ge2$ and the base in~\eqref{eq:zy} is not $1$.} Then the $y_k$ are pairwise distinct. Let $e_m(y)\ne0$ be the first nonzero coefficient of $E$, so $m\ge13$; since $e_m$ has finitely many roots, $e_m(y_k)\ne0$ for large $k$. With $d_m=\deg e_m$,
+\[
+-d_m\max(0,-\vt(y_k))\le\vt(e_m(y_k))\le\log_2\bigl(\|e_m\|_1\Ht(y_k)^{d_m}\bigr),
+\]
+so $\vt(e_m(y_k))=o(q^k)$ by~\eqref{eq:smallheight}. Put $\eta_k^-=\max(0,-\vt(y_k))=\max(0,N_{0,k}-N_{1,k})=o(q^k)$. Every monomial $z^ny^i$ occurring in $e_n(y)z^n$ has $i\le D+n$, so
+\begin{equation}\label{eq:tail}
+\vt(e_n(y_k)z_k^n)\ge n\min(N_{0,k},N_{1,k})-D\eta_k^- .
+\end{equation}
+The terms with $n\ge m+1$ have valuation at least $(m+1)Lq^k+o(q^k)$, while the term $n=m$ has valuation $mLq^k+o(q^k)$. Hence $E(z_k,y_k)\ne0$ for all large $k$.
+
+\subsection{The contradiction}
+By~\eqref{eq:tail} applied to all $n\ge13$,
+\begin{equation}\label{eq:lower}
+\vt(E(z_k,y_k))\ge13\min(N_{0,k},N_{1,k})-D\eta_k^-=13Lq^k+o(q^k).
+\end{equation}
+On the other hand write $z_k=a/b$, $y_k=c/d$, $h_k=u/v$ in lowest terms with positive denominators. Multiplying $E(z_k,y_k)=P(z_k,y_k)+Q(z_k,y_k)h_k$ by $b^6d^Dv$ gives an integer $\mathcal N_k$ with
+\[
+|\mathcal N_k|\le C_{P,Q}\,\Ht(z_k)^6\Ht(y_k)^D\Ht(h_k)\le C'_{P,Q,\xi}\,3^{7N_{0,k}+N_{1,k}}\,\Ht(y_k)^D .
+\]
+Along the sequence of Case~1 or Case~2 we have $\mathcal N_k\ne0$, and since the denominator $b^6d^Dv$ is a positive integer, $\vt(E(z_k,y_k))\le\vt(\mathcal N_k)\le\log_2|\mathcal N_k|$. Therefore
+\begin{equation}\label{eq:upper}
+\vt(E(z_k,y_k))\le(7N_{0,k}+N_{1,k})\log_23+D\log_2\Ht(y_k)+O(1)=8Lq^k\log_23+o(q^k).
+\end{equation}
+Since $13>8\log_23$, equivalently $2^{13}=8192>6561=3^8$, the bounds~\eqref{eq:lower} and~\eqref{eq:upper} are incompatible for large $k$. Hence $\xi\notin\Q$.
+
+With $z$-degree $5$ and vanishing to order $11$ the same estimate would require $2^{11}>3^7$, which is false; degree $6$ is sufficient for this argument, and we make no minimality claim.
+
+\subsection{The converse and the corollary}
+If $t$ is ultimately periodic, so is $\kappa(t)$, and for a nonempty period $r$ one has $\Phi(r^\infty)=c(r)/(1-\lambda(r))\in\Q$ with $1-\lambda(r)\ne0$; a finite prefix preserves rationality by~\eqref{eq:affine}. If $UV=VU$, then $U,V$ are powers of a common word~\cite[Chapter~1]{Lothaire}, so $\kappa(t)$ is periodic and $\Phi(\kappa(t))$ is rational. This completes the proof of Theorem~\ref{thm:main}. Adding or removing a finite parity prefix changes $\Phi$ by an affine map with nonzero rational slope, by~\eqref{eq:affine}, which gives Corollary~\ref{cor:integer}, since $\pi$ and $\Phi$ are inverse bijections between $\Z_2$ and infinite binary words. \qed
+
+\section{Examples}\label{sec:examples}
+
+\begin{example}[Period-doubling]
+Let $\sigma(0)=01$, $\sigma(1)=00$ and let $t$ be the fixed point starting with $0$, so $t_n=\vt(n+1)\bmod2$, $q=2$, $a_0=1$, $a_1=0$, $\delta=-1$. If $t$ had an eventual period $p=2^\alpha\beta$ with $\beta$ odd, then for large $k>\alpha$ and $n=2^k-1$ we would have $t_n\equiv k$ but $t_{n+p}\equiv\vt(2^k+p)=\alpha$, which fails for one parity of $k$. With $U=110$, $V=111$ (noncommuting), Theorem~\ref{thm:main} shows $\Phi(\kappa(t))\notin\Q$, although $\sigma(0)$ and $\sigma(1)$ have different numbers of ones. Here $\delta=-1$, a case not covered by the regular framework of~\cite{LvdP1982}.
+\end{example}
+
+\begin{example}[A nonprimitive Cantor substitution]
+Let $\sigma(0)=000$, $\sigma(1)=101$ and let $t$ be the fixed point starting with $1$; then $q=3$, $\delta=2$, and the prefix of length $3^k$ contains exactly $2^k$ ones. Ones occur infinitely often with density zero, so $t$ is not ultimately periodic. The substitution is not primitive. For $U=110$, $V=111$ we get $y_k=3^{-2^k}$, and for $U=10$, $V=111$ (lengths $2$ and $3$, one-counts $1$ and $3$, $10111\ne11110$) we get $y_k=(2/9)^{2^k}$. In both cases the second coordinate moves, so an argument using finitely many specializations does not suffice; Case~2 of Section~\ref{sec:proof} applies.
+\end{example}
+
+\begin{example}[Thue--Morse]
+For $\sigma(0)=01$, $\sigma(1)=10$ one has $a_0=a_1=1$ and $\delta=0$, so $y_k=1$ for $k\ge1$ and Case~1 applies. The transformation matrix $\begin{psmallmatrix}2&1\\0&0\end{psmallmatrix}$ is singular. For codings by two distinct blocks of equal length the stronger transcendence statement is in~\cite{Allikvere2026}.
+\end{example}
+
+\begin{remark}
+A binary parity prefix of length $H$ is realized by a residue class modulo $2^H$, so arbitrarily long finite prefixes of $\kappa(t)$ have positive integer realizations. Theorem~\ref{thm:main} concerns one fixed rational initial value realizing the entire infinite word, and is consistent with this.
+\end{remark}
+
+\section{Finite exact checks}\label{sec:checks}
+
+The proof above is complete without computation. As an independent check of the formulas and of the existence of approximants as in Lemma~\ref{lem:Pade}, the supplementary material contains a generator of explicit approximants, a separate standard-library checker using exact rational arithmetic, and an independent reconstruction of three approximants. The checks cover the identities~\eqref{eq:affine} for $254$ words, the valuation statement of Lemma~\ref{lem:affine} for $10{,}795$ pairs, the commutator~\eqref{eq:D} for $900$ pairs (commuting pairs included), the counts of Lemma~\ref{lem:counts} in $1{,}200$ cases, the block identity~\eqref{eq:seedF} in $144$ cases, and six explicit approximants with $E\in z^{13}\Z[y][[z]]$.
+
+\begin{center}
+\begin{tabular}{lcl}
+\toprule
+Control word & first nonzero order of $E$ & leading coefficient (one normalization)\\
+\midrule
+Period-doubling & 13 & $y^6+y^5+y^4$\\
+Cantor ($000,101$) & 14 & $y^6$\\
+Thue--Morse & 13 & $-2y^9-3y^8-2y^7$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent Leading coefficients depend on the normalization of $(P,Q)$. These finite checks are not a formal verification of the theorem.
+
+\section{Concluding remarks}\label{sec:remarks}
+
+The argument combines three ingredients: noncommutation of the coded blocks at every substitution level (giving $D_k\ne0$), the gap between the dominant eigenvalue $q$ and the subdominant eigenvalue $\delta$ of the substitution (controlling the moving coordinate $y_k$), and a fixed Pad\'e-type approximant together with a separate nonvanishing argument. Natural questions are:
+\begin{enumerate}[label=(\roman*)]
+\item to determine whether the classification follows from a $p$-adic version of Mahler's method in several variables that allows singular or non-regular transformation matrices;
+\item to extend the result to larger control alphabets and to non-uniform substitutions, where the two levels no longer share the main term $Lq^k$;
+\item to make the argument effective, i.e.\ to bound, in terms of the height of a rational $x$, the length of the longest prefix of $\kappa(t)$ that $x$ can realize.
+\end{enumerate}
+
+\section*{Acknowledgments and use of generative AI}
+
+Generative AI systems were used in this work. The underlying research repository was developed with the assistance of AI systems, including OpenAI ChatGPT and Anthropic Claude, for exploring and drafting arguments, writing and running verification code, and critically reviewing proofs. An earlier Korean draft of this paper was prepared with OpenAI ChatGPT, and this English manuscript was prepared with Anthropic Claude, which was also used to recheck the proof. No AI system is an author, and AI-based checking is not a substitute for peer review. The author takes full responsibility for the content, the correctness of the proofs, and the citations.
+
+\section*{Data availability}
+
+The supplementary material (approximant generator, independent checker, regression tests, explicit certificates with expected results, and an independent reconstruction script) is available in the Zenodo record \url{https://zenodo.org/records/23186729} and in the public repository \url{https://github.com/hajin5305/collatz-bu-paper}. The checker uses only the Python standard library; the generator requires SymPy.
+
+\begin{thebibliography}{99}
+
+\bibitem{AB2007}
+B.~Adamczewski and Y.~Bugeaud, \emph{On the complexity of algebraic numbers. I. Expansions in integer bases}, Ann. of Math. (2) \textbf{165} (2007), no.~2, 547--565. \href{https://doi.org/10.4007/annals.2007.165.547}{doi:10.4007/annals.2007.165.547}.
+
+\bibitem{Allikvere2026}
+J.~Allikvere, \emph{Periodic shadows, drift pressure, and transcendence of the $3x+1$ conjugacy map}, preprint (2026), \href{https://doi.org/10.5281/zenodo.21543841}{doi:10.5281/zenodo.21543841}.
+
+\bibitem{BL1996}
+D.~J.~Bernstein and J.~C.~Lagarias, \emph{The $3x+1$ conjugacy map}, Canad. J. Math. \textbf{48} (1996), no.~6, 1154--1169. \href{https://doi.org/10.4153/CJM-1996-060-x}{doi:10.4153/CJM-1996-060-x}.
+
+\bibitem{BY2017}
+Y.~Bugeaud and J.-Y.~Yao, \emph{Hankel determinants, Pad\'e approximations, and irrationality exponents for $p$-adic numbers}, Ann. Mat. Pura Appl. (4) \textbf{196} (2017), 929--946. \href{https://doi.org/10.1007/s10231-016-0602-7}{doi:10.1007/s10231-016-0602-7}.
+
+\bibitem{Ide2019}
+H.~Ide, \emph{Algebraic independence of certain entire functions of two variables generated by linear recurrences}, preprint, arXiv:1908.06289 (2019).
+
+\bibitem{LvdP1982}
+J.~H.~Loxton and A.~J.~van der Poorten, \emph{Arithmetic properties of the solutions of a class of functional equations}, J. Reine Angew. Math. \textbf{330} (1982), 159--172. \href{https://doi.org/10.1515/crll.1982.330.159}{doi:10.1515/crll.1982.330.159}.
+
+\bibitem{Lothaire}
+M.~Lothaire, \emph{Combinatorics on Words}, Encyclopedia of Mathematics and its Applications, vol.~17, Addison-Wesley, 1983; reprinted, Cambridge University Press, 1997.
+
+\bibitem{Sharpe2026}
+M.~Sharpe, \emph{Rung one of the word-complexity ladder: a machine-verified exclusion of an automatic Collatz itinerary by Mahler's method in degree one}, manuscript (2026), \url{https://github.com/msharpe248/collatz}.
+
+\end{thebibliography}
+
+\end{document}
