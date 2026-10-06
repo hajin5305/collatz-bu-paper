@@ -1,122 +1,121 @@
-이진 균일 치환 고정점의 블록 부호화에 대한 콜라츠 패리티 역상의 무리성
-보조자료 및 재현 안내
+Irrationality of Collatz Parity Inverses for Block Codings of Binary Uniform Fixed Points
+Supplementary material and reproduction guide
 
-저자: Lee HaJin
-초안 및 보조자료 준비일: 2026-10-06
-기준 저장소: hajin5305/collatz-research
-고정 commit: f751b9102355c516434ed9d0882bf4eb8608d95b
+Author: Lee HaJin
+Draft and supplement prepared: 2026-10-06
+Research repository: hajin5305/collatz-research
+Pinned commit: f751b9102355c516434ed9d0882bf4eb8608d95b
+(English translation of korean/supplement_README_ko.txt; the procedure is unchanged.)
 
-1. 이 묶음의 목적
+1. Purpose
 
-이 보조자료는 논문 초안의 유한 블록 항등식과 구체적인 Padé 인증서를
-정확한 정수·유리수 연산으로 재현하기 위한 것이다. 주정리 BU의 일반적인
-무리성 결론은 원고의 서면 증명에 근거한다. 유한 인증서 6개나 검사 성공을
-무한한 모든 치환에 대한 증명 또는 일반 콜라츠 추측의 증명으로 해석하지 않는다.
+This supplement reproduces, in exact integer and rational arithmetic, the finite block identities and the
+explicit Padé-type certificates mentioned in the manuscript. The general irrationality conclusion of the
+main theorem (Theorem BU) rests on the written proof in the manuscript. Six finite certificates and passing
+checks must not be read as a proof for all substitutions, nor as a proof of the Collatz conjecture.
 
-주정리의 원본 위치는 다음과 같다.
+Original location of the main theorem:
   docs/research_records/2026-10-02/binary_uniform_pade/THEORY_KO.md
-  정리 BU 및 §§0-9
+  Theorem BU and Sections 0-9
 
-정리는 q>=2인 이진 q-균일 치환의 일방향 고정점 t와 비어 있지 않은 이진
-출력 블록 U,V에 대해 Phi(kappa(t))가 유리수일 필요충분조건을 분류한다.
-그 조건은 t가 최종 주기적이거나 UV=VU인 것이다. 치환의 원시성이나 출력
-블록의 같은 길이·같은 1의 개수를 요구하지 않는다. 모든 automatic 단어나
-일반 비균일 치환을 포괄하는 정리는 아니다.
+The theorem classifies when Phi(kappa(t)) is rational, for a one-sided fixed point t of a binary q-uniform
+substitution (q >= 2) and nonempty binary output blocks U, V: exactly when t is ultimately periodic or
+UV = VU. Primitivity of the substitution and equal length or equal number of ones of the blocks are not
+required. The theorem does not cover all automatic words or general non-uniform substitutions.
 
-2. 파일과 원본의 대응
+2. Files and their origin
 
 binary_uniform_pade/
   generate.py
-    SymPy 선형대수로 6개의 유한 Padé 인증서를 생성한다.
-    원본 패키지와 같은 파일이며 --output 인자가 필수이다.
+    Generates the six finite Padé certificates by SymPy linear algebra.
+    Identical to the original package file; the --output argument is required.
   checker.py
-    생성기를 import하지 않는 별도 검사기이다. 표준 라이브러리와 Fraction
-    연산으로 인증서 및 유한 항등식을 검사한다. 제어 접두는 위치의 q진 전개로
-    생성하므로 생성기의 반복 치환 방식과 구별된다.
+    A separate checker that does not import the generator. It checks the certificates and the finite
+    identities with the standard library and Fraction arithmetic. Control prefixes are generated from the
+    base-q expansion of positions, which differs from the generator's iterated substitution.
   test_checker.py
-    정상 사례와 변조 거부를 다루는 기존 회귀 검사 14개이다.
+    The original 14 regression tests, covering valid cases and rejection of tampered input.
   certificates.json
-    고정 기준점의 Padé 인증서 6개이다.
+    The six Padé certificates at the pinned commit.
   RESULTS.json
-    위 인증서 및 유한 항등식에 대한 원본 기대 결과이다.
+    The original expected results for these certificates and finite identities.
 
-위 다섯 파일의 원본 디렉터리:
+Original directory of the five files above:
   docs/research_records/2026-10-02/binary_uniform_pade/
 
 independent_audit/
   verify_uniform_audit.py
-    별도 구현으로 period-doubling, Cantor, Thue–Morse의 Padé 쌍을 재구성한다.
-    아래 6절에서 설명하는 별도 실수 pseudo-trajectory 진단도 함께 실행한다.
-    명령행 출력 파일 옵션은 없다. 스크립트 자신의 디렉터리에 있는
-    EXACT_CHECK_RESULTS.json을 직접 기록하므로 반드시 임시 복사본에서 실행한다.
+    A separate implementation that reconstructs the Padé pairs for period-doubling, Cantor and Thue-Morse.
+    It also runs the separate real pseudo-trajectory diagnostic described in Section 6.
+    It has no output-file option: it writes EXACT_CHECK_RESULTS.json in its own directory, so always run
+    it in a temporary copy.
   EXACT_CHECK_RESULTS.json
-    독립 구현의 원본 기대 결과이다.
+    The original expected results of the independent implementation.
 
-위 두 파일의 원본 디렉터리:
+Original directory of the two files above:
   docs/research_records/2026-10-04/literature_value_audit/uniform_review/
 
 requirements.txt
-  생성기와 독립 Padé 검산에 필요한 SymPy 1.14.0의 설치 요구사항이다.
-  checker.py와 test_checker.py 자체는 표준 라이브러리만 사용한다.
+  Installation requirement (SymPy 1.14.0) for the generator and the independent Padé check.
+  checker.py and test_checker.py use only the standard library.
 SOURCE_MANIFEST.json
-  복사한 원본 파일 7개의 저장소 경로와 SHA-256 해시를 기록한다.
-  최종 묶음을 만들 때 각 파일이 고정 commit의 원본과 바이트 단위로 일치함을 확인했다.
+  Repository paths and SHA-256 hashes of the seven copied original files.
+  When the bundle was assembled, every file was confirmed byte-identical to the original at the pinned commit.
 validation_summary.json
-  2026-10-06에 실제로 완료한 재현, 실행 환경, 범위 및 결과 일치의 요약이다.
-  기록된 실행 경로는 당시 작성 환경의 경로이며, 사용자의 재현에는 아래
-  상대경로 명령을 사용한다.
+  Summary of the reproduction actually completed on 2026-10-06: environment, scope and agreement of results.
+  The recorded execution paths are those of the preparation environment; use the relative commands below.
 literature_search_log.json
-  초안 준비 과정의 문헌 검색 기록이다. 수학적 정리의 증명이나 전 문헌의
-  완전한 조사 결과로 취급하지 않는다.
-literature_review_ko.txt
-  선행연구와 적용 조건, 전체 정리의 우선권에 관한 검토 범위를 설명한다.
+  Record of the literature searches made while preparing the draft. It is neither a proof of a mathematical
+  statement nor a complete survey of the literature.
+literature_review.txt
+  Scope of the review of related work, conditions of application, and priority of the full theorem.
+  (Named literature_review_ko.txt in the first archived bundle; the content is unchanged.)
 README.txt
-  이 안내문이다.
+  This guide.
 
-3. 실제 검증 환경과 확인된 결과
+3. Environment and confirmed results
 
-본 초안 준비 중 실제 사용한 환경:
+Environment actually used while preparing the draft:
   Python 3.12.14
   SymPy 1.14.0
 
-원본 패키지의 임시 복사본에서 다음을 완료했다.
-  - 기존 unit tests 14개 통과
-  - generate.py로 Padé 인증서 6개 재생성
-  - checker.py 정상 모드 통과
-  - checker.py의 -O 최적화 모드 통과
-  - verify_uniform_audit.py 정상 모드 통과
-  - 원본 인증서, 정상·최적화 검사 결과, 독립 검산 결과의 4개 비교에서
-    JSON 자료형과 값이 모두 일치
+In a temporary copy of the original package the following were completed:
+  - the 14 existing unit tests pass
+  - generate.py regenerates the six Padé certificates
+  - checker.py passes in normal mode
+  - checker.py passes in -O (optimized) mode
+  - verify_uniform_audit.py passes in normal mode
+  - all four comparisons (original certificates; normal and optimized checker results; independent results)
+    agree in JSON types and values
 
-정확 유한 범위:
-  - 유한 블록 분자·역아핀 자료: 254개 이진 단어
-  - 첫 불일치 위치의 2-adic valuation: 10,795개 단어 쌍
-  - 아핀 commutator 항등식 및 가환 예외: 900개 순서쌍
-    이 수에는 commutator가 0인 가환 쌍도 포함된다.
-  - 치환 계수 항등식: 1,200개 경우
-  - 확대 블록의 유한 급수 항등식: 144개 경우
-    유한 급수의 끝항을 유지하여 검사한다.
-  - Padé 인증서: 6개
-  - 정수 높이 간격: 2^13 - 3^8 = 1631 > 0
+Exact finite scope:
+  - finite block numerators and inverse-affine data: 254 binary words
+  - 2-adic valuation at the first mismatch: 10,795 pairs of words
+  - affine commutator identity and the commuting exception: 900 ordered pairs
+    (this number includes commuting pairs, whose commutator is zero)
+  - substitution coefficient identities: 1,200 cases
+  - finite series identities for scaled blocks: 144 cases
+    (the end terms of the finite series are kept in the check)
+  - Padé certificates: 6
+  - integer height gap: 2^13 - 3^8 = 1631 > 0
 
-6개 제어 사례의 이름:
+Names of the six control cases:
   thue_morse, period_doubling, cantor,
   delta_plus_one, delta_minus_two, delta_plus_two
 
-모든 인증서는 z-차수가 6 이하이고 z^0부터 z^12까지의 13개 계수를
-소거한다. 첫 비영항은 Cantor에서 14차, 나머지 5개에서 13차이다.
-이는 구체적인 보조식의 유한 검산이다. 일반 치환마다 필요한 보조식의 존재와
-실제 이동 평가값의 비영성은 원고에서 각각 별도로 증명한다.
+Every certificate has z-degree at most 6 and cancels the 13 coefficients of z^0 through z^12. The first
+nonzero term has degree 14 for Cantor and 13 for the other five. This is a finite check of concrete
+approximants. The existence of an approximant for each general substitution and the nonvanishing of the
+actual moving evaluations are proved separately in the manuscript.
 
-4. 임시 복사본에서 전체 유한 재현 실행
+4. Running the full finite reproduction in a temporary copy
 
-아래 명령은 Linux/macOS의 bash를 기준으로 하며, 압축을 푼 supplement
-디렉터리 안에서 시작한다. python3가 Python 3.12 계열을 가리키는 환경을
-권장한다. 위의 실제 재현 버전은 3.12.14이다. 새 가상환경의 패키지 설치에는
-패키지 저장소에 대한 접근이 필요하다.
+The commands below assume bash on Linux or macOS and start inside the unpacked supplement directory.
+An environment where python3 is Python 3.12 is recommended (the reproduction above used 3.12.14).
+Installing packages in a new virtual environment requires access to the package index.
 
-다음 절차는 원본 보조자료를 수정하지 않고 임시 디렉터리에 복사한 뒤 실행한다.
-BU_SOURCE_DIR와 BU_REPLAY_DIR는 이 재현 작업에만 쓰는 변수이다.
+The procedure copies the supplement into a temporary directory and runs there, so the original files are
+not modified. BU_SOURCE_DIR and BU_REPLAY_DIR are used only for this reproduction.
 
   BU_SOURCE_DIR="$(pwd -P)"
   BU_REPLAY_DIR="$(mktemp -d "${TMPDIR:-/tmp}/collatz-bu-replay.XXXXXX")"
@@ -138,18 +137,18 @@ BU_SOURCE_DIR와 BU_REPLAY_DIR는 이 재현 작업에만 쓰는 변수이다.
   python -B verify_uniform_audit.py
   cd ..
 
-각 명령의 종료코드와 출력을 확인한다. 실패한 명령이 있으면 해당 실패를
-기록하고 그 실행 전체를 PASS로 보고하지 않는다. 다음의 비교까지 완료해야
-재계산과 기대 결과의 일치를 확인한 것이다.
+Check the exit status and output of every command. If a command fails, record the failure and do not report
+the run as PASS. Agreement between recomputation and expected results is established only after the
+comparison below.
 
-독립 스크립트는 EXACT_CHECK_RESULTS.json을 쓰므로 실행 직전에 기대값을
-EXPECTED_EXACT_CHECK_RESULTS.json으로 보존했다. 이 복사와 재계산 모두
-임시 디렉터리 안에서만 수행한다.
+The independent script writes EXACT_CHECK_RESULTS.json, so the expected values are saved as
+EXPECTED_EXACT_CHECK_RESULTS.json just before running it. Both the copy and the recomputation happen only
+inside the temporary directory.
 
-5. 원본 기대값과 재생성 JSON 비교
+5. Comparing the original expected values with the regenerated JSON
 
-위 명령이 끝난 임시 supplement 디렉터리에서 다음을 실행한다. 단순한
-문자열 서식 비교가 아니라 JSON 자료형과 값을 재귀적으로 비교한다.
+In the temporary supplement directory, after the commands above, run the following. It compares JSON types
+and values recursively, not string formatting.
 
 python -B - <<'PY'
 import json
@@ -183,38 +182,38 @@ for expected, actual in pairs:
 print('PASS: all four typed JSON comparisons')
 PY
 
-검사기가 출력하는 PASS는 명시된 유한 검사를 통과했다는 뜻이다. 일반
-무리성 정리, 외부 문헌의 전체 증명, 저장소 전체 검증 또는 원격 CI의 통과를
-뜻하지 않는다. 재현 후 로그와 결과를 확인할 동안에는 임시 디렉터리를
-보존하면 된다.
+A PASS printed by a checker means only that the stated finite checks passed. It does not mean the general
+irrationality theorem, the full proofs of external sources, verification of the whole research repository,
+or a passing remote CI. Keep the temporary directory while inspecting logs and results.
 
-6. 최적화 모드와 독립 보조 진단의 범위
+6. Optimized mode and the scope of the independent auxiliary diagnostic
 
-checker.py는 주요 검사에 명시적 예외를 사용하며, 정상 모드와 -O 모드에서
-같은 결과를 확인했다. 이 사실을 다른 모든 스크립트의 -O 지원으로
-일반화하지 않는다. verify_uniform_audit.py는 assert를 사용하므로 위와 같이
-정상 모드로 실행한다. 독립 스크립트의 -O 실행을 검증 방법으로 사용하지 않는다.
+checker.py raises explicit exceptions for its main checks and gives the same results in normal and -O mode.
+This is not generalized to -O support of every other script. verify_uniform_audit.py uses assert, so run it
+in normal mode as above; its -O run is not used as a verification method.
 
-verify_uniform_audit.py의 출력은 두 부분으로 구성된다.
+The output of verify_uniform_audit.py has two parts:
   pade:
-    period-doubling, Cantor, Thue–Morse 3개 사례의 독립 Padé 계산.
+    independent Padé computations for three cases (period-doubling, Cantor, Thue-Morse).
   pseudo_trajectory:
-    유리수 -3에서 출발하고 실수 상태에 따라 분기를 선택하는 별도
-    pseudo-trajectory의 정확한 2,000단계 진단.
+    an exact 2,000-step diagnostic of a separate pseudo-trajectory that starts at the rational -3 and
+    chooses branches according to a real state.
 
-두 번째 부분은 원래 문헌 검토의 보조 진단을 보존한 것이다. ordinary 정수의
-실제 패리티 궤도라는 주장이 아니며, 이 BU 정리의 증명 입력이 아니다.
-그 2,000단계 검산은 최종 2-adic 값의 유리성·무리성을 판정하지 않는다.
-따라서 논문 본문의 BU 결과 표에는 이 진단을 포함하지 않았다.
+The second part preserves an auxiliary diagnostic from the original literature review. It is not a claim
+about the actual parity orbit of an ordinary integer and is not an input to the proof of Theorem BU. The
+2,000-step check does not decide rationality or irrationality of the final 2-adic value, so it is not
+included in the paper's tables.
 
-7. 저자, AI 활용 및 검토 상태
+7. Author, use of AI, and review status
 
-논문과 이 보조자료의 저자는 Lee HaJin 단독이다. 연구 기록과 초안 작성에는
-생성형 AI가 활용되었으며, 이번 재현 및 자연어 증명 재검토에도 ChatGPT를
-사용했다. 별도 생성기·검사기 및 별도의 AI 검토라는 의미의 독립성을 외부
-인간 전문가의 동료심사나 증명보조기를 이용한 형식 검증으로 해석하지 않는다.
+The author of the paper and of this supplement is Lee HaJin. Generative AI was used in the research records
+and in drafting; ChatGPT was also used for this reproduction and for re-reading the natural-language proof,
+and Anthropic Claude was used for the English manuscript and translation. Independence in the sense of a
+separate generator and checker, or of a separate AI review, must not be read as peer review by external
+human experts or as formal verification with a proof assistant.
 
-원고는 저자의 최종 검토 전 초안이다. 제출 원고의 정확성, 인용, 독창성 및
-공개 범위의 최종 확인과 책임은 저자에게 있다. 전체 BU 정리의 외부 우선권은
-확정하지 않았으며, Thue–Morse 특수족과 Padé·Mahler 방법의 선행을 인정한다.
-문헌 조사 범위와 남은 비교 의무는 함께 제공된 문헌 검토 파일을 따른다.
+The manuscript has not yet been finally reviewed by the author. The author is responsible for the
+correctness, citations, originality and public release of the submitted manuscript. External priority of the
+full theorem BU is not established; the precedents for the Thue-Morse special family and for Padé and Mahler
+methods are acknowledged. The scope of the literature search and the remaining comparison tasks are
+described in literature_review.txt.
