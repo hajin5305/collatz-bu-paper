@@ -1,0 +1,347 @@
+{
+  "date": "2026-10-06",
+  "repository": "hajin5305/collatz-research",
+  "read_only_commit": "f751b9102355c516434ed9d0882bf4eb8608d95b",
+  "scope": "Independent candidate-prior-art triage for manuscript selection; targeted Exa search, not native zbMATH/Scholar/arXiv database querying; existing same-version theorem audits reused; no priority certification.",
+  "searches": [
+    {
+      "id": "nov_search_0",
+      "query": "A mathematical research paper by Hiroshi Mimuro from 2001 on rational Collatz cycles or periodic points of the 3x+1 function, with full text theorems for cycle words and their reduced denominators.",
+      "objective": "Locate the primary Mimuro 2001 paper and exact theorem statements. Evaluate overlap with an all-length lower bound 481 for reduced denominators of positive rational cycles containing repeated blocks of equal length and exponent sum; avoid generic conjecture summaries.",
+      "numResults": 5,
+      "status": "fulfilled",
+      "engine": "Exa",
+      "returned": [
+        {
+          "title": "N/A",
+          "url": "https://projecteuclid.org/journalArticle/Download?urlid=10.55937%2Fsut%2F1126270660"
+        },
+        {
+          "title": "On certain simple cycles of the Collatz conjecture",
+          "url": "https://exa.ai/library/publication/vdsmqpcmvkd"
+        },
+        {
+          "title": "[math/0204170] 3⁢𝑥+1 dynamics on rationals with fixed denominator",
+          "url": "https://ar5iv.labs.arxiv.org/html/math/0204170"
+        },
+        {
+          "title": "Optimal bounds for the length of rational Collatz cycles",
+          "url": "https://www.math.ch/norbert.hungerbuehler/publications/Optimal_bounds_for_the_length_of_rational_Collatz_cycles.pdf"
+        },
+        {
+          "title": "On Generalized Circuit of the Collatz Conjecture",
+          "url": "https://exa.ai/library/publication/7frp3d6x4pp"
+        }
+      ]
+    },
+    {
+      "id": "nov_search_1",
+      "query": "A mathematical research article by Chisala from 1994 about Collatz iteration, cycles and rational periodic points, including a PDF or author full text with definitions of cycles and irreducibility.",
+      "objective": "Find Chisala 1994 exact title and original publication or author PDF. Need theorem-level prior art on cyclic block repetition and denominator bounds, not citations alone.",
+      "numResults": 5,
+      "status": "fulfilled",
+      "engine": "Exa",
+      "returned": [
+        {
+          "title": "Cycles in Collatz sequences",
+          "url": "https://publi.math.unideb.hu/paper/168/download/10_5486_PMD_1994_1379.pdf"
+        },
+        {
+          "title": "Busiso Chisala",
+          "url": "https://math.buffalo.edu/mad/PEEPS/chisala_busiso.html"
+        },
+        {
+          "title": "Cycles in Collatz sequences",
+          "url": "https://exa.ai/library/publication/6qlshmqxv72"
+        },
+        {
+          "title": "Marc Chamberland",
+          "url": "https://chamberland.math.grinnell.edu/papers/3x_survey_eng.pdf"
+        },
+        {
+          "title": "Optimal bounds for the length of rational Collatz cycles",
+          "url": "https://www.math.ch/norbert.hungerbuehler/publications/Optimal_bounds_for_the_length_of_rational_Collatz_cycles.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nov_search_2",
+      "query": "Primary mathematical papers by Bairrington 2023 and Weitzer on rational Collatz cycles, cyclic exponent sequences, denominator formulas and the construction or classification of 3x+d periodic orbits.",
+      "objective": "Find original papers and exact sections that might subsume repeated equal-length equal-exponent-sum block denominator bounds. Prioritize full text, archive records and authors over blogs.",
+      "numResults": 6,
+      "status": "fulfilled",
+      "engine": "Exa",
+      "returned": [
+        {
+          "title": "A New Proof of Rational Cycles for Collatz-Like Functions Using a Coprime Condition",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1155/2023/5159528"
+        },
+        {
+          "title": "N/A",
+          "url": "https://export.arxiv.org/pdf/2307.11990v5.pdf"
+        },
+        {
+          "title": "[2101.04067] 1 Introduction",
+          "url": "https://ar5iv.labs.arxiv.org/html/2101.04067"
+        },
+        {
+          "title": "On special integer linear combinations of terms of rational cycles for the generalized 3x+1 problem",
+          "url": "https://nntdm.net/papers/nntdm-31/NNTDM-31-3-658-666.pdf"
+        },
+        {
+          "title": "[1408.6884] 3⁢𝑥+1 inverse orbit generating functions almost always have natural boundaries",
+          "url": "https://ar5iv.labs.arxiv.org/html/1408.6884"
+        },
+        {
+          "title": "N/A",
+          "url": "https://internationalpubls.com/index.php/pmj/article/download/6258/3522/11279"
+        }
+      ]
+    },
+    {
+      "id": "nov_search_3",
+      "query": "A mathematical paper proving impossibility or constancy of polynomial or quasipolynomial nonnegative weak Lyapunov functions for the accelerated Collatz map on odd integers modulo a fixed modulus, with nonincrease along every actual Collatz edge.",
+      "objective": "Locate primary theorem-level prior art for a function-class obstruction: every exact nonnegative quasipolynomial weak Collatz Lyapunov function is constant on positive odd integers not divisible by 3. Need finite-residue polynomial ranking function papers and counterexamples, not general Collatz proofs.",
+      "numResults": 6,
+      "status": "fulfilled",
+      "engine": "Exa",
+      "returned": [
+        {
+          "title": "Searching for a Decreasing Function in the Collatz Conjecture",
+          "url": "https://konigsberg.dev/papers/collatz-decreasing-function"
+        },
+        {
+          "title": "Algebraic Obstructions to Residue-Only Lyapunov Certificates for the Shortcut Collatz Map",
+          "url": "https://exa.ai/library/publication/cl3r54s1wk9"
+        },
+        {
+          "title": "Impossibility of Bounded-Memory Lyapunov Functions for Number-Theoretic Dynamical Systems",
+          "url": "https://exa.ai/library/publication/q436nlwgnct"
+        },
+        {
+          "title": "Arithmetic Obstructions for Periodic Valuation Dynamics of the Accelerated Collatz Map",
+          "url": "https://exa.ai/library/publication/s63rqvnwz46"
+        },
+        {
+          "title": "PRH | Aux | 4.3 • A Lyapunov Certificate for the Accelerated Collatz Map | Zenodo",
+          "url": "https://zenodo.org/records/17451262"
+        },
+        {
+          "title": "Algebraic Obstructions to Residue-Only Lyapunov Certificates for the Shortcut Collatz Map",
+          "url": "https://exa.ai/library/publication/89dkjfq8t05"
+        }
+      ]
+    },
+    {
+      "id": "bu_nov_search_0",
+      "query": "Primary research proving p-adic algebraic independence or transcendence for multivariate Mahler functional equations under a monomial transformation, especially with a singular or nonprimitive incidence matrix and evaluation points whose second coordinate does not tend to zero.",
+      "objective": "Find exact p-adic several-variable Mahler theorems beyond Loxton van der Poorten 1982 complex theorem and beyond scalar Bugeaud Yao 2017; inspect hypotheses on contraction, nonsingularity and admissibility relevant to binary uniform substitution weighted generating functions.",
+      "numResults": 7,
+      "status": "fulfilled",
+      "engine": "Exa",
+      "returned": [
+        {
+          "title": "Transcendence of multivariate Mahler functions and algebraic relations between their values",
+          "url": "https://arxiv.org/pdf/2607.24877"
+        },
+        {
+          "title": "Algebraic independence of the values of functions satisfying Mahler type functional equations under the transformation represented by a power relatively prime to the characteristic of the base field",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0022314X17303268"
+        },
+        {
+          "title": "Transcendence and algebraic independence of a family of 𝑝-adic valuation generating functions",
+          "url": "https://arxiv.org/html/2512.14077"
+        },
+        {
+          "title": "Mahler’s method in several variables II: Applications to base change problems and finite automata",
+          "url": "https://arxiv.org/html/1809.04826"
+        },
+        {
+          "title": "5. Mahler’s Method",
+          "url": "https://adamczewski.perso.math.cnrs.fr/Mahler_Selecta.pdf"
+        },
+        {
+          "title": "[1908.06289] Algebraic independence of certain entire functions of two variables generated by linear recurrences",
+          "url": "https://ar5iv.labs.arxiv.org/html/1908.06289"
+        },
+        {
+          "title": "[1809.04823] Mahler’s method in several variables I: The theory of regular singular systems",
+          "url": "https://ar5iv.labs.arxiv.org/html/1809.04823"
+        }
+      ]
+    },
+    {
+      "id": "bu_nov_search_1",
+      "query": "A research paper proving that rational 2-adic Collatz parity inverses cannot have nonperiodic binary constant-length substitution fixed points, with arbitrary nonempty block codings of unequal lengths and unequal numbers of ones, including nonprimitive substitutions.",
+      "objective": "Locate theorem-level prior art or a general subsuming theorem for the entire rationality classification Phi(kappa(t)) rational iff control eventually periodic or output blocks commute. Exclude a result only on Thue-Morse and do not conflate parity symbols with ordinary 2-adic digits.",
+      "numResults": 7,
+      "status": "fulfilled",
+      "engine": "Exa",
+      "returned": [
+        {
+          "title": "Parity sequences of the 3x+1 map on the 2-adic integers and Euclidean embedding",
+          "url": "https://arxiv.org/html/1805.00133"
+        },
+        {
+          "title": "A Structural Study of Parity Vectors in the Collatz",
+          "url": "https://jxiv.jst.go.jp/index.php/jxiv/preprint/download/3096/7302/6705"
+        },
+        {
+          "title": "Fibonacci Enumeration of Parity Blocks in Collatz Trajectories",
+          "url": "https://arxiv.org/html/1412.0519"
+        },
+        {
+          "title": "Collatz Analysis Two-Stage Tree and Multiset Calculus",
+          "url": "https://exa.ai/library/publication/2mgdymr70kj"
+        },
+        {
+          "title": "Josefina L´opez Villa Abecia, Sud Cinti, Chuquisaca, Bolivia Peter Stoll Villa Abecia, Sud Cinti, Chuquisaca, Bolivia",
+          "url": "https://emis.muni.cz/journals/INTEGERS/papers/m28/m28.pdf"
+        },
+        {
+          "title": "2-Adic Obstructions to Presburger-Definable Characterizations of Collatz Cycles",
+          "url": "https://arxiv.org/html/2601.12772v1"
+        },
+        {
+          "title": "Christoffel Words as Extremal Structures in Collatz Dynamics",
+          "url": "https://arxiv.org/html/2607.24844v1"
+        }
+      ]
+    },
+    {
+      "id": "bu_nov_search_2",
+      "query": "A mathematical paper on irrationality of two-variable weighted automatic generating series sum t_n z^n y^(t_0+...+t_(n-1)) evaluated p-adically, with binary uniform substitutions and Padé approximants at moving rational specializations.",
+      "objective": "Find primary papers on precisely weighted prefix-count power series, automatic products or affine iterated systems that might independently imply rational Collatz parity inverse exclusion. Prioritize exact theorem assumptions and original PDFs.",
+      "numResults": 7,
+      "status": "fulfilled",
+      "engine": "Exa",
+      "returned": [
+        {
+          "title": "Hankel determinants, Pad´e approximations, and irrationality exponents for p-adic numbers",
+          "url": "https://irma.math.unistra.fr/~bugeaud/travaux/p-adic18.pdf"
+        },
+        {
+          "title": "Irrationality measures for some automatic real numbers | Mathematical Proceedings of the Cambridge Philosophical Society | Cambridge Core",
+          "url": "https://www.cambridge.org/core/journals/mathematical-proceedings-of-the-cambridge-philosophical-society/article/abs/irrationality-measures-for-some-automatic-real-numbers/F89F4B7BBC9A06B6E9934FB2C3AFFE4D"
+        },
+        {
+          "title": "On the rational approximation to p-adic Thue–Morse numbers",
+          "url": "https://ems.press/content/serial-article-files/39199"
+        },
+        {
+          "title": "EUDML  |  On the rational approximation to the Thue–Morse–Mahler numbers",
+          "url": "https://eudml.org/doc/219765"
+        },
+        {
+          "title": "[2110.01855] On the rational approximation to 𝑝-adic Thue–Morse numbers",
+          "url": "https://ar5iv.labs.arxiv.org/html/2110.01855"
+        },
+        {
+          "title": "Irrationality measures for some automatic real numbers",
+          "url": "http://math.univ-lyon1.fr/%7Eadamczew/IMAN.pdf"
+        },
+        {
+          "title": "Hankel determinants, Padé approximations, and irrationality exponents for p-adic numbers - MaRDI portal",
+          "url": "https://portal.mardi4nfdi.de/wiki/Publication:2362870"
+        }
+      ]
+    },
+    {
+      "id": "bu_nov_search_3",
+      "query": "A p-adic version of Mahler's method for automatic sequences in rational base expansions or nonconstant-base affine codings, with rationality criteria and noncommuting binary blocks, Adams Faverjon Nishioka Loxton van der Poorten.",
+      "objective": "Search across automata, substitution dynamical systems and Mahler theory for general primary results not already in the Collatz bibliography. Pull papers that address the p-adic place or rational-base nonuniform output directly, rather than ordinary base-p automatic digit expansions.",
+      "numResults": 7,
+      "status": "fulfilled",
+      "engine": "Exa",
+      "returned": [
+        {
+          "title": "[2012.08283] Mahler’s method in several variables and finite automata",
+          "url": "https://ar5iv.labs.arxiv.org/html/2012.08283"
+        },
+        {
+          "title": "Boris Adamczewski & Colin Faverjon",
+          "url": "https://adamczewski.perso.math.cnrs.fr/RegularSingular1.pdf"
+        },
+        {
+          "title": "[2102.10828] Automatic sequences: from rational bases to trees",
+          "url": "https://ar5iv.labs.arxiv.org/html/2102.10828"
+        },
+        {
+          "title": "Expansions of numbers in multiplicatively independent bases: Furstenberg’s conjecture, Mahler’s method, and finite automata",
+          "url": "https://www.irif.fr/~numeration/uploads/Main/adamczewski_20210427.pdf"
+        },
+        {
+          "title": "1. Introduction 1 2. Representing numbers in independent bases 5 3. Mahler’s method in several variables 8 4. Notation 15 5. Admissibility conditions 18 6. A new vanishing theorem 22 7. Mahler’s method in families 30 8. Hilbert’s Nullstellensatz and relation matrices 33 9. Proof of Theorem 7.2 43 10. Proofs of Theorems 3.3, 3.6, 3.8, and of Corollaries 3.5 and 3.9 56 11. Proof of Theorem 1.1 61 12. Proof of Theorems 2.2, 2.3, and 2.4 64 References 65",
+          "url": "https://faverjon.perso.math.cnrs.fr/AdamczewskiFaverjon_MahlerFiniteAutomata.pdf"
+        },
+        {
+          "title": "Diophantine properties of real numbers generated by finite automata",
+          "url": "https://adamczewski.perso.math.cnrs.fr/article_Compositio.pdf"
+        },
+        {
+          "title": "Mahler’s classification and a certain class of 𝑝-adic numbers",
+          "url": "https://arxiv.org/html/1512.06511v3"
+        }
+      ]
+    }
+  ],
+  "requested_result_slots": 50,
+  "returned_result_slots": 50,
+  "unique_discovered_urls": 49,
+  "new_primary_reads": [
+    {
+      "url": "https://arxiv.org/html/2607.24877v1",
+      "author": "Enzo Brechler",
+      "title": "Transcendence of multivariate Mahler functions and algebraic relations between their values",
+      "status": "read_partial",
+      "scope": "Definitions1.1/1.5; Theorems1.2/1.6; Proposition3.12 and proof's setting; Section4 final proof of1.2; Theorem5.1. Full HTML available but no independent whole-proof validation.",
+      "comparison": "p-adic analyticity is functional; value lifting inherits AF3.3 complex setting. No whole-BU p-adic, singular/root-of-unity/nonprimitive bridge certified."
+    },
+    {
+      "url": "https://ar5iv.labs.arxiv.org/html/1908.06289",
+      "author": "Haruki Ide",
+      "title": "Algebraic independence of certain entire functions of two variables generated by linear recurrences",
+      "status": "read_partial",
+      "scope": "arXiv1908.06289v1,17Aug2019; Section3.1 conditions(I)-(IV)p; Section3.2 Lemma2; Section3.3 Theorems7/9; system form; references. Original arXiv HTML route initially yielded metadata only; ar5iv yielded full theorem text.",
+      "comparison": "Explicit p-adic multivariate value theorems exist. Require strong analytic nonvanishing (IV)p, nonsingular/no-root-of-unity transform and restricted affine-plus-multiplicative functional system; no uniform BU hypothesis bridge verified."
+    },
+    {
+      "url": "https://arxiv.org/html/1512.06511v3",
+      "author": "Tomohiro Ooto",
+      "title": "Mahler's classification and a certain class of p-adic numbers",
+      "status": "read_partial",
+      "scope": "Theorem1.1 (attributed to Adamczewski-Bugeaud), Theorems1.2/2.9/2.10 assumptions; ordinary p-adic digit setting.",
+      "comparison": "Ordinary digits in sum a_n p^n; Collatz parity is not established to be Hensel digits of Phi. No direct whole-BU subsumption."
+    },
+    {
+      "url": "https://arxiv.org/html/2102.10828",
+      "authors": [
+        "Michel Rigo",
+        "Manon Stipulanti"
+      ],
+      "title": "Automatic sequences: from rational bases to trees",
+      "status": "abstract_read",
+      "scope": "Title/author/abstract only, no theorem-level read.",
+      "comparison": "Characterization of sequences computed from rational-base representations; not a demonstrated Collatz parity inverse irrationality theorem."
+    },
+    {
+      "url": "https://publi.math.unideb.hu/paper/168/download/10_5486_PMD_1994_1379.pdf",
+      "author": "Busiso P. Chisala",
+      "title": "Cycles in Collatz sequences",
+      "status": "read_partial",
+      "scope": "Publ.Math.Debrecen45(1-2)(1994),35-39; Section2 cycle formula; Section3 Lemma3.1/Proposition3.2; Section5 unnumbered Theorem.",
+      "comparison": "Whole-cycle minimum at fixed odd length, and ordinary cycle length given verified small orbits. Not repeated-block reduced-denominator minimum481."
+    },
+    {
+      "url": "https://onlinelibrary.wiley.com/doi/10.1155/2023/5159528",
+      "authors": [
+        "Benjamin Bairrington",
+        "Nabil Mohsen"
+      ],
+      "title": "A New Proof of Rational Cycles for Collatz-Like Functions Using a Coprime Condition",
+      "status": "read_partial",
+      "scope": "Journal of Mathematics2023,Article5159528,7Sep2023; abstract,Section2.2 Theorem12/Proposition13 prose; equations lost in HTML extraction, so exact formula-dependent theorem audit incomplete.",
+      "comparison": "Characteristic-sequence eventual periodicity and integral loops. No claim of full theorem-level no-overlap because math extraction incomplete."
+    }
+  ]
+}

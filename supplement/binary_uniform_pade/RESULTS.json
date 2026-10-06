@@ -1,0 +1,19 @@
+{
+  "affine_words": 254,
+  "commutator_pairs": 900,
+  "count_identity_cases": 1200,
+  "first_difference_pairs": 10795,
+  "first_nonzero_orders": {
+    "cantor": 14,
+    "delta_minus_two": 13,
+    "delta_plus_one": 13,
+    "delta_plus_two": 13,
+    "period_doubling": 13,
+    "thue_morse": 13
+  },
+  "height_gap_integer": 1631,
+  "macro_identity_cases": 144,
+  "pade_certificates": 6,
+  "scope": "finite exact checks only",
+  "status": "PASS"
+}

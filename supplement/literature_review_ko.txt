@@ -1,0 +1,77 @@
+# Independent literature triage for manuscript selection
+
+Date: 2026-10-06. Read-only repository basis: hajin5305/collatz-research, main commit f751b9102355c516434ed9d0882bf4eb8608d95b. This is an intermediate review note for the drafting agent, not a repository modification or a certificate of priority.
+
+## Recommendation
+
+Use RED-BINARY-UNIFORM-PADE-IRRATIONALITY (Theorem BU) as the central result. Its single statement classifies rationality for every binary uniform substitution fixed point and every pair of nonempty output blocks, including nonprimitive substitutions and unequal block lengths and one-counts. This is a broader, more coherent paper topic than the sharp q=481 cycle threshold. Retain the exact classification as the contribution and explain the familiar Padé/height framework openly.
+
+The strongest supported positioning is: a self-contained rationality classification for a specified substitution-generated family, with a moving rational parameter whose height grows subexponentially relative to the substitution scale. No reviewed source has yet been shown to subsume the full statement. This is not evidence of worldwide priority, and the repository's current whole-claim novelty remains unchecked/low.
+
+Do not advertise a first automatic Collatz exclusion, a new general Padé method, a theorem for all automatic or morphic parity words, or transcendence of the entire BU family. The control alphabet has exactly two letters. Variable-length output blocks must remain allowed. The result excludes rational 2-adic realizations of this specified symbolic family; it supplies no theorem placing arbitrary Collatz trajectories in the family.
+
+## Exact statement to preserve
+
+Let sigma be a binary q-uniform substitution, q >= 2, and let t = sigma(t) be a one-sided fixed point. Let U,V be nonempty binary words and kappa(0)=U, kappa(1)=V. If Phi is the inverse shortcut-Collatz parity map, then Phi(kappa(t)) is rational if and only if t is ultimately periodic or UV=VU. In the complementary case Phi(kappa(t)) is an irrational 2-adic integer. Finite prefixes and finite shifts preserve irrationality.
+
+## Existing reviewed antecedents to reuse
+
+1. Bernstein and Lagarias, The 3x+1 Conjugacy Map, Canadian Journal of Mathematics 48(6) (1996), 1154-1169, DOI 10.4153/CJM-1996-060-x. The parity conjugacy, inverse series, finite affine block maps, and periodic rational realizations are established background. The relevant repository source reading is the author's retypeset original, equations 1.3, 1.5, 1.6 and Appendix A. URL: https://cr.yp.to/papers/3x1conjmap-19960215-retypeset20220326.pdf
+
+2. Bugeaud and Yao, Hankel determinants, Padé approximations, and irrationality exponents for p-adic numbers, Annali di Matematica Pura ed Applicata 196 (2017), 929-946, DOI 10.1007/s10231-016-0602-7. The rational-point Remark, author PDF p.13, applies to the scalar Thue-Morse regrouping. Theorem 3.1, p.6, supplies its scalar functional-equation context. The extra rational-height inequality belongs to a quantitative irrationality-exponent bound, not to the transcendence conclusion. It must not be imposed to erase the known Thue-Morse overlap. URL: https://irma.math.unistra.fr/~bugeaud/travaux/p-adic18.pdf
+
+3. Adamczewski and Bugeaud, On the complexity of algebraic numbers I. Expansions in integer bases, Annals of Mathematics 165 (2007), 547-565, DOI 10.4007/annals.2007.165.547, Theorem 6, p.562. This is a fundamental p-adic digit-stammering antecedent. Collatz parity symbols are not thereby identified with the Hensel digits of Phi. The varying powers of 3 in the inverse series remain substantive. URL: https://annals.math.princeton.edu/wp-content/uploads/annals-v165-n2-p04.pdf
+
+4. Allikvere, Periodic shadows, drift pressure, and transcendence of the 3x+1 conjugacy map, 2026 unreviewed preprint, DOI 10.5281/zenodo.21543841. The repository has checked Theorem 5.9, p.12: equal-length distinct output blocks under Thue-Morse control. Pairing arbitrary noncommuting U,V into UV,VU yields the known arbitrary-block Thue-Morse specialization. Treat this source as an unreviewed preprint and avoid upgrading its broader assertions. URL: https://zenodo.org/records/21543841
+
+5. Sharpe, Rung One of the Word-Complexity Ladder: a Machine-Verified Exclusion of an Automatic Collatz Itinerary by Mahler's Method in Degree One, unreviewed manuscript dated 2026-08-28, pinned commit a2aa8a0dda45290fd01c36c253b4b4e14a7e812b. Theorems 1.1/1.2, p.2, address the particular fixed point sigma(1)=110, sigma(0)=011 and scalar F_2(8/9). Its degree-four/order-nine tower proof is a close methodological antecedent. The broad scope paragraph is not an arbitrary binary-uniform theorem. The source explicitly distinguishes the Lean core from an unformalized analytic passage. URL: https://raw.githubusercontent.com/msharpe248/collatz/a2aa8a0dda45290fd01c36c253b4b4e14a7e812b/paper/rung1.pdf
+
+The repository has also already compared ABL08 Theorem 1, Loxton-van der Poorten 1982 Theorem 1, and Adamczewski-Faverjon's modern multivariate lifting theorem. Reuse those exact source cards. Do not describe a complex value theorem as a theorem about the chosen 2-adic value, and do not infer a single-place conclusion from an alternative over several contracting places.
+
+## New primary-source findings
+
+### Brechler: the new multivariate theorem does not automatically close the p-adic bridge
+
+Enzo Brechler, Transcendence of multivariate Mahler functions and algebraic relations between their values, arXiv:2607.24877v1. The manuscript itself is dated February 2026; independent submission-date metadata was not obtained in this agent's successful fetch, so do not conflate manuscript and arXiv dates. URL: https://arxiv.org/html/2607.24877v1
+
+Read Definition 1.1, Theorems 1.2 and 1.6, Proposition 3.12 and its setting, the final proof of Theorem 1.2 in Section 4, and Theorem 5.1. Proposition 3.12 is p-adic analyticity/meromorphy. The value-lifting proof invokes Adamczewski-Faverjon Theorem 3.3 and removes a regular-field-extension hypothesis; it does not state an independently established general 2-adic lifting theorem. Definition 1.1 still imposes a nonsingular transformation, no root-of-unity eigenvalues, a positive Perron-Frobenius eigenvector, contraction to zero, and independence of the orbit. The full BU family has not been embedded in these hypotheses. No whole-paper correctness audit was performed.
+
+### Ide: explicit p-adic multivariate value theorems exist, with material hypotheses
+
+Haruki Ide, Algebraic independence of certain entire functions of two variables generated by linear recurrences, arXiv:1908.06289v1, submitted 17 August 2019. URL: https://arxiv.org/abs/1908.06289 ; theorem text: https://ar5iv.labs.arxiv.org/html/1908.06289
+
+Read Section 3.1 conditions (I)-(IV)_p, Section 3.2 Lemma 2, and Section 3.3 Theorems 7 and 9. These genuinely include a prime p, so it would be wrong to say that all multivariate Mahler value theory is only complex. Theorem 9 uses a constant-matrix affine subsystem together with separate scalar multiplicative equations, and strong analytic orbit nonvanishing (IV)_p. Lemma 2 verifies nonvanishing under an irreducible characteristic-polynomial hypothesis. The natural binary substitution matrix has eigenvalues q and delta, so this sufficient condition does not directly apply; delta=0 or +/-1 also violates condition (I). No full BU functional-system, nonvanishing, or independence bridge was established. Treat this as relevant prior machinery, not verified subsumption.
+
+### Other surfaced sources
+
+Tomohiro Ooto, Mahler's classification and a certain class of p-adic numbers, arXiv:1512.06511v3, Theorem 1.1 and Theorems 1.2/2.9/2.10 were inspected. The target is the ordinary digit series sum a_n p^n. This retains the same Hensel-digit mismatch as AB07 for Collatz parity. URL: https://arxiv.org/html/1512.06511v3
+
+Michel Rigo and Manon Stipulanti, Automatic sequences: from rational bases to trees, arXiv:2102.10828: abstract only. Its objects are sequences whose index representations feed automata in rational numeration systems. No theorem-level assertion about Collatz parity inverse rationality was verified. URL: https://arxiv.org/html/2102.10828
+
+## Draft-ready positioning
+
+The inverse of the shortcut Collatz parity map has a classical affine description on finite words. Its arithmetic on a prescribed infinite family is more delicate. Theorem 1 gives an exact rationality criterion for arbitrary nonempty block images of one-sided fixed points of binary uniform substitutions. Neither primitivity nor equal output lengths or equal numbers of ones is assumed. The Thue-Morse specialization overlaps existing p-adic Mahler and Collatz-conjugacy results, and individual automatic itineraries have also been excluded previously. The contribution considered here is the full quantified classification and its self-contained proof.
+
+The argument belongs to the established Padé and arithmetic-height tradition. Its useful feature is a two-variable series evaluated at a sequence of rational points: the main coordinate contracts on the uniform-substitution scale, while the height of an auxiliary coordinate is smaller on that scale. A nonzero approximation of order at least thirteen and degree at most six then yields incompatible 2-adic divisibility and rational-height bounds. General p-adic digit theorems do not apply directly because parity symbols are not the ordinary 2-adic digits of the inverse. Multivariate Mahler value theorems require separate functional-system and orbit-nonvanishing hypotheses; no assertion that all such hypotheses hold for the full family is needed by the proof given here.
+
+## Comparison with the other candidates
+
+- q >= 481: valuable sharp arithmetic classification with a verified finite computation, but tied to a repeated equal-length/equal-sum block partition over a nonconstant least block-list period. No such partition is forced on arbitrary cycles. The sharpness example has minimum 215/481 < 1. The theorem does not prove the same sharp threshold for rational cycles all of whose states are at least one.
+- Critical t^(3/5) corridor exclusion: potentially a substantial separate analytic paper, but preserve the width-at-most-one real discrepancy interval, fixed K below the explicit critical constant, and eventual actual orbit hypotheses. This agent did not conduct a fresh theorem-level priority review of that exact analytic statement.
+- Length-five all-B cancellation: a clean self-contained classification with precisely two unordered pairs, both at B=15. Its integer-cycle corollary must not be presented as a new small-cycle exclusion. The exact modular classification is the potentially new statement.
+- Weak quasipolynomial rigidity (WQ): do not select it on novelty grounds. The latest 2026-10-06 novelty_frontier record classifies it reformulation/high, deriving the full exact conclusion from Monks et al., arXiv:1204.3904v2, Theorem 4.1, p.7, via actual backtracing and lifts.
+
+## q481 gap work completed before the selection shifted to BU
+
+New original: Busiso P. Chisala, Cycles in Collatz sequences, Publicationes Mathematicae Debrecen 45(1-2) (1994), 35-39, DOI 10.5486/PMD.1994.1379. Section 2 gives the rational cycle formula. Proposition 3.2 bounds the minimum of a positive rational cycle in terms of its odd length. Section 5's unnumbered theorem turns verification below N into a lower bound on integral cycle length. These stated results do not supply a reduced-denominator threshold for repeated equal-signature blocks. URL: https://publi.math.unideb.hu/paper/168/download/10_5486_PMD_1994_1379.pdf
+
+Benjamin Bairrington and Nabil Mohsen, A New Proof of Rational Cycles for Collatz-Like Functions Using a Coprime Condition, Journal of Mathematics 2023, Article 5159528, published 7 September 2023, DOI 10.1155/2023/5159528. Theorem 12/Proposition 13 prose concerns eventual periodicity of characteristic expansions and integral loops; formula extraction was incomplete, so an exact formula-dependent no-overlap conclusion was not certified. URL: https://onlinelibrary.wiley.com/doi/10.1155/2023/5159528
+
+Mimuro 2001's original title and theorem snippets were discovered, but the original primary paper was not fetched here. Weitzer was not independently resolved. Aliyev 2020 and the BM2006 large table supplement remain the previously documented access/attribution gaps. Do not report these as closed.
+
+## Search coverage and reproducibility
+
+SEARCH_LOG.json contains the exact eight Exa query strings: four initial cycle/finite-residue-function perspectives and four BU/Mahler/weighted-series perspectives. Fifty result slots were requested and returned, representing 49 distinct URLs, not 49 papers or 50 primary sources read. Six new primary sources were opened at the reading depths recorded above. Previous repository source readings were reused and are not counted as new reads. No native zbMATH or Google Scholar coverage is claimed. Exa's arXiv HTML route occasionally returned abstract metadata only; the successful ar5iv theorem fetch is recorded separately.
+
+No proof of the absence of a prior result, external expert certification, or blanket publishability guarantee follows from these searches. The concrete review question still open before submission is whether a verified general theorem plus a complete application argument subsumes BU for every allowed substitution and output pair.
+

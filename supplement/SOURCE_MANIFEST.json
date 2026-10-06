@@ -1,0 +1,48 @@
+{
+  "repository": "hajin5305/collatz-research",
+  "commit": "f751b9102355c516434ed9d0882bf4eb8608d95b",
+  "files": [
+    {
+      "file": "supplement/binary_uniform_pade/RESULTS.json",
+      "repository_path": "docs/research_records/2026-10-02/binary_uniform_pade/RESULTS.json",
+      "sha256": "8310d95a4f77eb3f27012ee979aa0b3acbca3c3283dd5cc37bec9ab6b30bf8b1",
+      "matches_pinned_source": true
+    },
+    {
+      "file": "supplement/binary_uniform_pade/certificates.json",
+      "repository_path": "docs/research_records/2026-10-02/binary_uniform_pade/certificates.json",
+      "sha256": "458fa28541e250b6d5b5391bc69120b7de0b854d7118cb7d99ac5a4b4d027e86",
+      "matches_pinned_source": true
+    },
+    {
+      "file": "supplement/binary_uniform_pade/checker.py",
+      "repository_path": "docs/research_records/2026-10-02/binary_uniform_pade/checker.py",
+      "sha256": "df16b06cf1ec09518f24e5a7598f7813324985b94eb78700b78df19458d44e2d",
+      "matches_pinned_source": true
+    },
+    {
+      "file": "supplement/binary_uniform_pade/generate.py",
+      "repository_path": "docs/research_records/2026-10-02/binary_uniform_pade/generate.py",
+      "sha256": "590dab950b4aecdb3b2d13a8e2f7eabf6b26dcaf027140720c02c1c298fb8a81",
+      "matches_pinned_source": true
+    },
+    {
+      "file": "supplement/binary_uniform_pade/test_checker.py",
+      "repository_path": "docs/research_records/2026-10-02/binary_uniform_pade/test_checker.py",
+      "sha256": "382ea7ccf2499bcfd3681f7de19579f958276408d4fbef0c6999ff1c80f3842e",
+      "matches_pinned_source": true
+    },
+    {
+      "file": "supplement/independent_audit/EXACT_CHECK_RESULTS.json",
+      "repository_path": "docs/research_records/2026-10-04/literature_value_audit/uniform_review/EXACT_CHECK_RESULTS.json",
+      "sha256": "c0835be752da6f450273bdf3896b95347d2472457090b32ac0e988a36ac0545b",
+      "matches_pinned_source": true
+    },
+    {
+      "file": "supplement/independent_audit/verify_uniform_audit.py",
+      "repository_path": "docs/research_records/2026-10-04/literature_value_audit/uniform_review/verify_uniform_audit.py",
+      "sha256": "3454c66446fb7a285e3f1915dadc19c774ae6dff77c1631a7793b56a1f61696d",
+      "matches_pinned_source": true
+    }
+  ]
+}

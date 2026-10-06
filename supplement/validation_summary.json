@@ -1,0 +1,155 @@
+{
+  "status": "PASS",
+  "date": "2026-10-06",
+  "repository": "hajin5305/collatz-research",
+  "repository_commit": "f751b9102355c516434ed9d0882bf4eb8608d95b",
+  "python": "3.12.14",
+  "sympy": "1.14.0",
+  "scope": "Finite exact supplements only; not formal verification of the universal BU theorem.",
+  "runs": [
+    {
+      "name": "environment",
+      "arguments": [
+        "-B",
+        "-c",
+        "import sys,sympy; print(sys.version); print(sympy.__version__)"
+      ],
+      "elapsed_seconds": 0.664883,
+      "returncode": 0
+    },
+    {
+      "name": "unittest",
+      "arguments": [
+        "-B",
+        "-m",
+        "unittest",
+        "-v"
+      ],
+      "elapsed_seconds": 0.264905,
+      "returncode": 0
+    },
+    {
+      "name": "generator",
+      "arguments": [
+        "-B",
+        "generate.py",
+        "--output",
+        "regenerated.json"
+      ],
+      "elapsed_seconds": 1.250839,
+      "returncode": 0
+    },
+    {
+      "name": "checker",
+      "arguments": [
+        "-B",
+        "checker.py",
+        "--certificate",
+        "regenerated.json",
+        "--report",
+        "regenerated_results.json"
+      ],
+      "elapsed_seconds": 0.198774,
+      "returncode": 0
+    },
+    {
+      "name": "checker_optimized",
+      "arguments": [
+        "-B",
+        "-O",
+        "checker.py",
+        "--certificate",
+        "regenerated.json",
+        "--report",
+        "optimized_results.json"
+      ],
+      "elapsed_seconds": 0.460976,
+      "returncode": 0
+    },
+    {
+      "name": "independent_uniform_audit",
+      "arguments": [
+        "-B",
+        "verify_uniform_audit.py"
+      ],
+      "elapsed_seconds": 1.688426,
+      "returncode": 0
+    }
+  ],
+  "comparisons": [
+    {
+      "source_file": "certificates.json",
+      "replayed_file": "regenerated.json",
+      "typed_json_equal": true
+    },
+    {
+      "source_file": "RESULTS.json",
+      "replayed_file": "regenerated_results.json",
+      "typed_json_equal": true
+    },
+    {
+      "source_file": "RESULTS.json",
+      "replayed_file": "optimized_results.json",
+      "typed_json_equal": true
+    },
+    {
+      "source_file": "EXACT_CHECK_RESULTS.json",
+      "replayed_file": "EXACT_CHECK_RESULTS.json",
+      "typed_json_equal": true
+    }
+  ],
+  "exact_counts": {
+    "affine_words": 254,
+    "commutator_pairs": 900,
+    "count_identity_cases": 1200,
+    "first_difference_pairs": 10795,
+    "first_nonzero_orders": {
+      "cantor": 14,
+      "delta_minus_two": 13,
+      "delta_plus_one": 13,
+      "delta_plus_two": 13,
+      "period_doubling": 13,
+      "thue_morse": 13
+    },
+    "height_gap_integer": 1631,
+    "macro_identity_cases": 144,
+    "pade_certificates": 6,
+    "scope": "finite exact checks only",
+    "status": "PASS"
+  },
+  "independent_pade": {
+    "period_doubling": {
+      "matrix_rank": 13,
+      "z_degree_limit": 6,
+      "cancelled_orders": 13,
+      "first_nonzero_order": 13,
+      "first_coefficient": "y**6 + y**5 + y**4",
+      "y_degree_bound": 3,
+      "P": "-y**3*z**5 + y**2*z**3 - y*z**5 + y*z**3 - z",
+      "Q": "y**3*z**6 + y**3*z**4 - y**2*z**2 - y*z**2 + 1"
+    },
+    "cantor": {
+      "matrix_rank": 13,
+      "z_degree_limit": 6,
+      "cancelled_orders": 13,
+      "first_nonzero_order": 14,
+      "first_coefficient": "y**6",
+      "y_degree_bound": 3,
+      "P": "y**3*z**6 + y**2*z**6 + y**2*z**2 + y + 1",
+      "Q": "y**3*z**6 - y**2*z**4 + y*z**2 - y - 1"
+    },
+    "thue_morse": {
+      "matrix_rank": 13,
+      "z_degree_limit": 6,
+      "cancelled_orders": 13,
+      "first_nonzero_order": 13,
+      "first_coefficient": "-2*y**9 - 3*y**8 - 2*y**7",
+      "y_degree_bound": 6,
+      "P": "y**6*z**6 + 3*y**5*z**6 - 3*y**5*z**5 + 2*y**5*z**4 + 3*y**4*z**6 - 3*y**4*z**5 + y**4*z**4 - y**4*z**3 + y**4*z**2 + y**3*z**6 - y**3*z**5 - y**3*z**4 - y**3*z**3 - y**3*z**2 + y**3*z + y**2*z**5 - 2*y**2*z**4 - 2*y**2*z**2 + y**2*z - 2*y*z**2 - z",
+      "Q": "y**6*z**6 - y**5*z**5 - y**4*z**6 - y**4*z**5 - y**4*z**4 + y**4*z**3 - y**4*z**2 - y**3*z**6 - y**3*z**4 + 2*y**3*z**3 - y**3*z**2 + 2*y**3*z - y**3 - y**2*z**4 + y**2*z**3 - y**2*z**2 + 2*y**2*z - y**2 + y*z + 1"
+    }
+  },
+  "unrelated_pseudo_trajectory_note": "The independent audit also checks a 2000-step real pseudo-trajectory. That diagnostic is not an input to the BU theorem and is omitted from the manuscript result table.",
+  "source_results_unchanged": true,
+  "draft_review": "Two separate AI reading reviews found no additional proof gap; their wording corrections on cancellation order and commuting pairs were incorporated. This is not external peer review or proof-assistant verification."
+}
