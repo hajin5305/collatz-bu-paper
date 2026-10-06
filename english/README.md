@@ -1,29 +1,34 @@
-# English manuscript (submission draft)
+# English manuscript - revision v0.2
 
-- `collatz_bu_en.tex` — journal-style manuscript (amsart), built with `pdflatex` (run twice).
-- `collatz_bu_en.pdf` — compiled version (8 pages, TeX Live 2023, pdfTeX).
+Author: **Lee HaJin**. Date: **October 6, 2026**. Status: **draft for author review**.
 
-This is an English rewrite of the Korean draft `../collatz_bu_draft_ko.tex` (v0.1, kept unchanged).
-The mathematics (definitions, lemmas, proof of the main theorem, examples) is the same; the changes are:
+The PDF and LaTeX are the primary English manuscript. A Word copy and a source archive accompany them.
 
-1. English text in `amsart` with MSC 2020 codes and keywords.
-2. New Proposition 4.2: the series `F, G` satisfy a two-variable linear Mahler-type functional equation for
-   the monomial map `τ(z,y) = (z^q y^{a_0}, y^δ)`, and the evaluation points form one `τ`-orbit. Section 1.1
-   explains why the regularity hypotheses of Loxton–van der Poorten (1982, §2 and Theorem 1) fail for some
-   members of the family (`δ ∈ {0, ±1}` or `δ < 0`; 2-adic place). The proof does not use this proposition.
-   The functional equation and the orbit relation were checked on truncated series for five substitutions.
-3. The contribution is stated relative to Allikvere (2026; Thue–Morse, equal-length blocks, transcendence) and
-   Sharpe (2026; one specific substitution), without a novelty claim beyond the sources discussed.
-4. Lemma 3.2 (two-word codes) cites Lothaire, *Combinatorics on Words*, Chapter 1, and keeps the short proof.
-5. Repository-internal material (commit hashes, audit names, run environment) moved out of the main text into
-   the Data availability statement; the finite checks are summarized in Section 8.
-6. The generative-AI statement moved from the abstract to an Acknowledgments section at the end, naming both
-   OpenAI ChatGPT and Anthropic Claude.
+## Corrections in this revision
 
-Items for the author to confirm before submission:
+- Made the repository's main README and reproduction guide English.
+- Defined the negative valuation quantity before both nonvanishing cases, including the finite-orbit case, and stated the convention for the zero eigenvalue at exponent zero.
+- Clarified the scope of the earlier Thue-Morse result: regrouping into `UV` and `VU` gives equal-length blocks even when the original output blocks have different lengths.
+- Preserved the AI disclosure and added the draft status to the abstract.
+- Corrected data availability: the private GitHub package and earlier Korean Zenodo deposit are identified separately. This revision does not claim a completed public English deposit.
+- Pinned the Sharpe source citation and regenerated the PDF and editable Word manuscript.
 
-- affiliation / e-mail / ORCID (left blank on purpose);
-- the AI statement wording matches the tools actually used;
-- the Zenodo record and this repository are public, and the DOI to cite in the Data availability section
-  (currently the record URL `https://zenodo.org/records/23186729` is cited);
-- the target journal's own style and AI policy.
+The preceding English version adds a Mahler functional-equation proposition. The manuscript's irrationality argument does not depend on that proposition. No claim of external peer review, formal verification or established priority is made.
+
+## Build
+
+From this directory, run PDFLaTeX twice:
+
+```sh
+pdflatex -interaction=nonstopmode -halt-on-error collatz_bu_en.tex
+pdflatex -interaction=nonstopmode -halt-on-error collatz_bu_en.tex
+sha256sum -c SHA256SUMS
+```
+
+The revised PDF has 9 pages. PDF numbering is authoritative. Word section, theorem, equation and bibliography references are static. Rebuild the Word copy after any structural change.
+
+The source archive contains the English source and rendered documents, this guide, and the supplementary files. The historical Korean audit records are preserved for provenance; use `supplement/README.md` for English reproduction instructions.
+
+## Review still required
+
+Before submission, the author should review the full proof, compare the cited literature and broader Mahler results directly, confirm priority and AI disclosure, and arrange a citable public deposit of the revised files. Successful finite checks do not establish the theorem for every substitution.

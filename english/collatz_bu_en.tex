@@ -25,6 +25,8 @@
 
 \title[Collatz parity inverses of block-coded uniform fixed points]{Irrationality of Collatz parity inverses for block codings of binary uniform fixed points}
 \author{Lee HaJin}
+\date{English revision v0.2, October 6, 2026; draft for author review}
+\hypersetup{pdftitle={Irrationality of Collatz parity inverses for block codings of binary uniform fixed points},pdfauthor={Lee HaJin}}
 % Affiliation, e-mail and ORCID are to be supplied by the author before submission.
 
 \subjclass[2020]{Primary 11J72; Secondary 11B85, 11B83, 68R15}
@@ -34,6 +36,7 @@
 
 \begin{abstract}
 Let $\Phi$ be the inverse of the Collatz ($3x+1$) parity map, which sends an infinite binary word to the unique $2$-adic integer whose shortcut Collatz orbit has that parity sequence. Let $t=\sigma(t)$ be a one-sided fixed point of a binary $q$-uniform substitution $\sigma$, $q\ge 2$, and let $\kappa$ be the block coding $0\mapsto U$, $1\mapsto V$ with nonempty binary words $U,V$. We prove that $\Phi(\kappa(t))$ is rational if and only if $t$ is ultimately periodic or $UV=VU$. No primitivity of $\sigma$ and no equality of the lengths or of the numbers of ones of $U$ and $V$ is assumed. In particular, no rational $2$-adic integer, and hence no positive integer, has such a parity sequence in the aperiodic noncommuting case. The proof expresses $\Phi(\kappa(t))$ at every substitution level through one fixed bivariate power series evaluated along the orbit of a monomial map, controls the height of the second coordinate by the subdominant eigenvalue of the substitution, and concludes with a fixed Pad\'e-type approximant, a separate nonvanishing argument for the actual evaluations, and the inequality $2^{13}>3^{8}$.
+Generative AI was used in the research and manuscript preparation; details are disclosed at the end of the paper. This manuscript is a draft pending the author's final review.
 \end{abstract}
 
 \maketitle
@@ -64,7 +67,7 @@ The series used in the proof satisfies a linear Mahler-type functional equation 
 
 Pad\'e approximation and height comparison for $p$-adic values of Mahler-type series are classical; see for instance Bugeaud and Yao~\cite{BY2017}, who treat Thue--Morse related $p$-adic numbers. Theorems on the complexity of $p$-adic \emph{digit} expansions, such as Adamczewski and Bugeaud~\cite{AB2007}, do not apply directly: the parity bits of the orbit are not the $2$-adic digits of $\Phi(w)$, and the series~\eqref{eq:Phi} below carries denominators $3^{S_{j+1}}$ that depend on the running number of ones.
 
-Two recent unrefereed manuscripts treat special cases. Allikvere~\cite{Allikvere2026} proves transcendence, a stronger conclusion than ours, for Thue--Morse controlled codings by two distinct blocks of equal length; after regrouping $UV$ and $VU$ this overlaps with the Thue--Morse case of Theorem~\ref{thm:main} under the equal-length assumption. Sharpe~\cite{Sharpe2026} excludes the parity sequence of the specific uniform substitution $1\mapsto110$, $0\mapsto011$ and its shifts. The contribution of the present paper is the exact rationality classification for the \emph{whole} class of binary uniform fixed points and two-block codings, including nonprimitive substitutions and blocks of different lengths and different numbers of ones, with a proof that does not invoke a transcendence theorem as a black box. We have not established that this classification is new in the literature beyond the sources discussed here.
+Two recent unrefereed manuscripts treat special cases. Allikvere~\cite{Allikvere2026} proves transcendence, a stronger conclusion than ours, for Thue--Morse controlled codings by two distinct blocks of equal length. For a Thue--Morse fixed point, regrouping according to $0\mapsto01$, $1\mapsto10$ replaces arbitrary noncommuting $U,V$ by the distinct equal-length blocks $UV,VU$. Thus the overlap includes unequal-length original blocks as well. Sharpe~\cite{Sharpe2026} excludes the parity sequence of the specific uniform substitution $1\mapsto110$, $0\mapsto011$ and its shifts. The result presented here is the exact rationality classification for the \emph{whole} class of binary uniform fixed points and two-block codings, including nonprimitive substitutions and blocks of different lengths and different numbers of ones, with a proof that does not invoke a transcendence theorem as a black box. We have not established that this classification is new in the literature beyond the sources discussed here.
 
 \section{Notation}\label{sec:notation}
 
@@ -143,7 +146,7 @@ In particular $N_{b,k}=Lq^k+o(q^k)$ for $b=0,1$.
 Let $f_k=A(\sigma^k(0))$ and $g_k=A(\sigma^k(1))$. Counting the ones produced by the zeros and ones of $\sigma^k(b)$ gives $f_{k+1}=a_0q^k+\delta f_k$ and the same recursion for $g_k$, with $f_0=0$, $g_0=1$. Hence $f_k=\rho(q^k-\delta^k)$ and $g_k=f_k+\delta^k$. Replacing zeros by $U$ and ones by $V$ gives $N_{b,k}=n_0q^k+(n_1-n_0)A(\sigma^k(b))$ and $A_{b,k}=A(U)q^k+(A(V)-A(U))A(\sigma^k(b))$, which are the stated formulas. Finally $0\le a_0\le q-a_1+a_0$ gives $0\le\rho\le1$, so $L>0$, and~\eqref{eq:delta} gives $\delta^k=o(q^k)$.
 \end{proof}
 
-Define the evaluation points
+We use the convention $\delta^0=1$, including when $\delta=0$. Define the evaluation points
 \begin{equation}\label{eq:zy}
 z_k=\lambda_{0,k},\qquad y_k=\frac{\lambda_{1,k}}{\lambda_{0,k}}=\Bigl(\frac{2^{n_1-n_0}}{3^{A(V)-A(U)}}\Bigr)^{\delta^k}.
 \end{equation}
@@ -162,7 +165,9 @@ in $\Z[y][[z]]$. Comparing coefficients,
 \end{equation}
 At $(z_k,y_k)$ the $n$-th term has valuation $nN_{0,k}+s_n(N_{1,k}-N_{0,k})\ge n\min(N_{0,k},N_{1,k})$, so both series converge in $\Q_2$.
 
-Since $t=\sigma^k(t)$, the word $w=\kappa(t)$ is, for every $k$, the concatenation of the blocks $W_{t_0,k}W_{t_1,k}W_{t_2,k}\cdots$. The slope of the prefix $W_{t_0,k}\cdots W_{t_{n-1},k}$ is $\lambda_{0,k}^{\,n-s_n}\lambda_{1,k}^{\,s_n}=z_k^ny_k^{s_n}$, so Lemma~\ref{lem:affine} gives
+Since $t=\sigma^k(t)$, the word $w=\kappa(t)$ is, for every $k$, the concatenation of the blocks $W_{t_0,k}W_{t_1,k}W_{t_2,k}\cdots$. The slope of the prefix $W_{t_0,k}\cdots W_{t_{n-1},k}$ is
+\[\lambda_{0,k}^{\,n-s_n}\lambda_{1,k}^{\,s_n}=z_k^ny_k^{s_n}.\]
+Thus Lemma~\ref{lem:affine} gives
 \[\xi:=\Phi(w)=c_{0,k}G(z_k,y_k)+(c_{1,k}-c_{0,k})F(z_k,y_k).\]
  Eliminating $G$ with~\eqref{eq:FGid} and using $z_ky_k=\lambda_{1,k}$,
 \begin{equation}\label{eq:seedF}
@@ -230,7 +235,7 @@ with nonzero denominator. Using~\eqref{eq:Bbound} and $A_{b,k}\le N_{b,k}$,
 \end{equation}
 
 \subsection{Nonvanishing of the actual evaluations}
-Fix $E$ as in Lemma~\ref{lem:Pade}. That $E$ is a nonzero series does not by itself imply $E(z_k,y_k)\ne0$; we show this along an infinite sequence of $k$.
+Fix $E$ as in Lemma~\ref{lem:Pade}, and put $\eta_k^-=\max(0,-\vt(y_k))=\max(0,N_{0,k}-N_{1,k})=o(q^k)$ for all $k$. That $E$ is a nonzero series does not by itself imply $E(z_k,y_k)\ne0$; we show this along an infinite sequence of $k$.
 
 \emph{Case 1: $\{y_k\}$ is finite.} This includes $\delta\in\{0,\pm1\}$ and the case where the base in~\eqref{eq:zy} equals $1$. Choose $\eta$ with $y_k=\eta$ for infinitely many $k$. Let $\ell$ be the order of the nonzero series $E(z,\eta)$ and $h=\max(0,-\vt(\eta))$. For $n\ge\ell+1$, $\vt(e_n(\eta)z_k^n)\ge n(N_{0,k}-h)-Dh$, which exceeds $\ell N_{0,k}+\vt(e_\ell(\eta))$ once $N_{0,k}$ is large. Hence $E(z_k,\eta)\ne0$ for all large $k$ in this subsequence.
 
@@ -238,7 +243,7 @@ Fix $E$ as in Lemma~\ref{lem:Pade}. That $E$ is a nonzero series does not by its
 \[
 -d_m\max(0,-\vt(y_k))\le\vt(e_m(y_k))\le\log_2\bigl(\|e_m\|_1\Ht(y_k)^{d_m}\bigr),
 \]
-so $\vt(e_m(y_k))=o(q^k)$ by~\eqref{eq:smallheight}. Put $\eta_k^-=\max(0,-\vt(y_k))=\max(0,N_{0,k}-N_{1,k})=o(q^k)$. Every monomial $z^ny^i$ occurring in $e_n(y)z^n$ has $i\le D+n$, so
+so $\vt(e_m(y_k))=o(q^k)$ by~\eqref{eq:smallheight}. Every monomial $z^ny^i$ occurring in $e_n(y)z^n$ has $i\le D+n$, so
 \begin{equation}\label{eq:tail}
 \vt(e_n(y_k)z_k^n)\ge n\min(N_{0,k},N_{1,k})-D\eta_k^- .
 \end{equation}
@@ -275,7 +280,7 @@ Let $\sigma(0)=000$, $\sigma(1)=101$ and let $t$ be the fixed point starting wit
 \end{example}
 
 \begin{example}[Thue--Morse]
-For $\sigma(0)=01$, $\sigma(1)=10$ one has $a_0=a_1=1$ and $\delta=0$, so $y_k=1$ for $k\ge1$ and Case~1 applies. The transformation matrix $\begin{psmallmatrix}2&1\\0&0\end{psmallmatrix}$ is singular. For codings by two distinct blocks of equal length the stronger transcendence statement is in~\cite{Allikvere2026}.
+For $\sigma(0)=01$, $\sigma(1)=10$ one has $a_0=a_1=1$ and $\delta=0$, so $y_k=1$ for $k\ge1$ and Case~1 applies. The transformation matrix $\begin{psmallmatrix}2&1\\0&0\end{psmallmatrix}$ is singular. The stronger transcendence statement in~\cite{Allikvere2026}, together with the regrouping described in Section~\ref{subsec:prior}, covers arbitrary noncommuting output blocks in this special case.
 \end{example}
 
 \begin{remark}
@@ -311,11 +316,11 @@ The argument combines three ingredients: noncommutation of the coded blocks at e
 
 \section*{Acknowledgments and use of generative AI}
 
-Generative AI systems were used in this work. The underlying research repository was developed with the assistance of AI systems, including OpenAI ChatGPT and Anthropic Claude, for exploring and drafting arguments, writing and running verification code, and critically reviewing proofs. An earlier Korean draft of this paper was prepared with OpenAI ChatGPT, and this English manuscript was prepared with Anthropic Claude, which was also used to recheck the proof. No AI system is an author, and AI-based checking is not a substitute for peer review. The author takes full responsibility for the content, the correctness of the proofs, and the citations.
+Generative AI was used in the research and manuscript preparation for exploring and drafting arguments, preparing verification code, critically reviewing proofs, and organizing and editing the text. The Korean draft was prepared with OpenAI ChatGPT. The preceding English manuscript reports assistance from Anthropic Claude; that historical report has not been independently verified in this revision. The present English revision used OpenAI ChatGPT for manuscript review, corrections, document preparation and verification. No AI system is an author, and AI-based checking is not external peer review or proof-assistant verification. Lee HaJin is the sole author and is responsible for the final review of the mathematical content, citations, originality and AI disclosure before submission. Model versions and other unconfirmed details are not supplied.
 
 \section*{Data availability}
 
-The supplementary material (approximant generator, independent checker, regression tests, explicit certificates with expected results, and an independent reconstruction script) is available in the Zenodo record \url{https://zenodo.org/records/23186729} and in the public repository \url{https://github.com/hajin5305/collatz-bu-paper}. The checker uses only the Python standard library; the generator requires SymPy.
+The supplementary material includes an approximant generator, a separate checker, regression tests, explicit certificates with expected results, and an independent reconstruction script. It is included with this manuscript's source archive and in \url{https://github.com/hajin5305/collatz-bu-paper}, which is private as of October 6, 2026 and requires permission to access. The published Zenodo record \url{https://zenodo.org/records/23186729} contains the earlier Korean LaTeX draft; this revision does not claim that the English manuscript or the supplementary package has been publicly deposited there. A citable public deposit of this revision remains to be completed before submission. The checker uses only the Python standard library; the generator requires SymPy 1.14.0. Instructions and the pinned source manifest accompany the archive.
 
 \begin{thebibliography}{99}
 
@@ -341,7 +346,7 @@ J.~H.~Loxton and A.~J.~van der Poorten, \emph{Arithmetic properties of the solut
 M.~Lothaire, \emph{Combinatorics on Words}, Encyclopedia of Mathematics and its Applications, vol.~17, Addison-Wesley, 1983; reprinted, Cambridge University Press, 1997.
 
 \bibitem{Sharpe2026}
-M.~Sharpe, \emph{Rung one of the word-complexity ladder: a machine-verified exclusion of an automatic Collatz itinerary by Mahler's method in degree one}, manuscript (2026), \url{https://github.com/msharpe248/collatz}.
+M.~Sharpe, \emph{Rung one of the word-complexity ladder: a machine-verified exclusion of an automatic Collatz itinerary by Mahler's method in degree one}, unrefereed manuscript (2026), fixed source: \url{https://github.com/msharpe248/collatz/blob/a2aa8a0dda45290fd01c36c253b4b4e14a7e812b/paper/rung1.tex}.
 
 \end{thebibliography}
 
